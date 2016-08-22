@@ -76,13 +76,9 @@ The base prefixes used are: `F, U, z, y`.
 
 ## FAQ
 
-> Why have digest size as a separate number?
+> Why the strange selection of codes / characters?
 
-Because otherwise you end up with a function code really meaning "function-and-digest-size-code". Makes using custom digest sizes annoying, and is less flexible.
-
-> Why isn't the size first?
-
-Because aesthetically I prefer the code first. You already have to write your stream parsing code to understand that a single byte already means "a length in bytes more to skip". Reversing these doesn't buy you much.
+The code values are selected such that they are included in the alphabets of the base they represent. For example, `F` is the base code for `base16 (hex)`, because `F` is in hex's 16 character alphabet. Note that the alphabets here are ASCII or UTF8 compliant. We have not found a case needing something else.
 
 > Why varints?
 
