@@ -31,6 +31,7 @@ encoding      codes   name
 base1         1       unary tends to be 11111
 base2         0       binary has 1 and 0
 base8         7       highest char in octal
+base10        9       highest char in decimal
 base16        F, f    highest char in hex
 base32        U, u    rfc4648 - highest letter
 base32hex     V, v    rfc4648 - highest char
