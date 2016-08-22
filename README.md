@@ -76,6 +76,13 @@ The base prefixes used are: `F, U, z, y`.
 
 ## FAQ
 
+> Is this a real problem?
+
+Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something else? See also:
+- https://en.wikipedia.org/wiki/8-bit_clean
+- https://en.wikipedia.org/wiki/MIME#Content-Transfer-Encoding
+- http://stackoverflow.com/questions/8571501/how-to-check-whether-the-string-is-base64-encoded-or-not
+
 > Why the strange selection of codes / characters?
 
 The code values are selected such that they are included in the alphabets of the base they represent. For example, `F` is the base code for `base16 (hex)`, because `F` is in hex's 16 character alphabet. Note that the alphabets here are ASCII or UTF8 compliant. We have not found a case needing something else.
