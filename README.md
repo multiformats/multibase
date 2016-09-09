@@ -10,7 +10,7 @@ Multibase is a protocol for distinguishing base encodings and other simple strin
 
 > Given data d encoded into string s, how can I tell what base d is encoded with?
 
-Base encodings exist because transports have restriections, use special in-band sequences, or must be human-friendly. When systems chose a base to use, it is not always clear _which_ base to use, as there are many tradeoffs in the decision. Multibase is here to save programs and programmers from worrying about which encoding is best. It solves the biggest problem: a program can use multibase to take input or produce output in whichever base is desired. The important part is that the value is self-describing, letting other programs elsewhere know what encoding it is using.
+Base encodings exist because transports have restrictions, use special in-band sequences, or must be human-friendly. When systems chose a base to use, it is not always clear _which_ base to use, as there are many tradeoffs in the decision. Multibase is here to save programs and programmers from worrying about which encoding is best. It solves the biggest problem: a program can use multibase to take input or produce output in whichever base is desired. The important part is that the value is self-describing, letting other programs elsewhere know what encoding it is using.
 
 ## Format
 
