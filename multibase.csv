@@ -8,7 +8,7 @@ base32hex,    Vv,   rfc4648 no padding - highest char
 base32hexpad, Tt,   rfc4648 with padding
 base32,       Bb,   rfc4648 no padding
 base32pad,    Cc,   rfc4648 with padding
-base32z       h,    z-base-32 - used by Tahoe-LAFS - highest letter
+base32z,      h,    z-base-32 - used by Tahoe-LAFS - highest letter
 base58flickr, Z,    highest letter
 base58btc,    z,    highest letter
 base64,       m,    rfc4648 no padding
