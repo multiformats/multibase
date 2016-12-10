@@ -104,6 +104,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 
 - [go-multibase](//github.com/multiformats/go-multibase)
 - [js-multibase](//github.com/multiformats/js-multibase)
+- [cs-multibase](//github.com/tabrath/cs-multibase)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
 
