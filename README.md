@@ -33,12 +33,12 @@ base2         0       binary has 1 and 0
 base8         7       highest char in octal
 base10        9       highest char in decimal
 base16        F, f    highest char in hex
-base32        U, u    rfc4648 - highest letter
+base32        B, b    rfc4648 - highest letter
 base32hex     V, v    rfc4648 - highest char
 base58flickr  Z       highest char
 base58btc     z       highest char
-base64        y       rfc4648 highest char
-base64url     Y       rfc4648 highest char
+base64        m       rfc4648 highest char
+base64url     u       rfc4648 highest char
 ```
 
 These encodings are being considered:
