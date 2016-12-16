@@ -33,12 +33,17 @@ base2         0       binary has 1 and 0
 base8         7       highest char in octal
 base10        9       highest char in decimal
 base16        F, f    highest char in hex
-base32        U, u    rfc4648 - highest letter
-base32hex     V, v    rfc4648 - highest char
+base32        B, b    rfc4648 - no padding - highest letter
+base32pad     C, c    rfc4648 - with padding
+base32hex     V, v    rfc4648 - no padding - highest char
+base32hexpad  T, t    rfc4648 - with padding
+base32z       h       z-base-32 - used by Tahoe-LAFS - highest letter
 base58flickr  Z       highest char
 base58btc     z       highest char
-base64        y       rfc4648 highest char
-base64url     Y       rfc4648 highest char
+base64        m       rfc4648 - no padding
+base64pad     M       rfc4648 - with padding - MIME encoding
+base64url     u       rfc4648 - no padding
+base64urlpad  U       rfc4648 - with padding
 ```
 
 These encodings are being considered:
