@@ -28,6 +28,7 @@ The current multibase table is [here](multibase.csv):
 
 ```
 encoding      codes   name
+identity      0x00    8-bit binary (encoder and decoder keeps data unmodified)
 base1         1       unary tends to be 11111
 base2         0       binary has 1 and 0
 base8         7       highest char in octal
@@ -50,7 +51,6 @@ These encodings are being considered:
 
 ```
 base128
-base256ascii  X       ascii
 base-emoji    😎      base emoji
 base65536     ᔰ       base65536
 utf8
