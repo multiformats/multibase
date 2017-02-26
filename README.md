@@ -124,6 +124,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [js-multibase](//github.com/multiformats/js-multibase)
 - [cs-multibase](//github.com/tabrath/cs-multibase)
 - [rust-multibase](//github.com/multiformats/rust-multibase)
+- [java-multibase](//github.com/multiformats/java-multibase)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
 
