@@ -85,12 +85,12 @@ And consider the same encodings with their multibase prefix
 
 ```
 F4D756C74696261736520697320617765736F6D6521205C6F2F # base16 F
-UJV2WY5DJMJQXGZJANFZSAYLXMVZW63LFEEQFY3ZP           # base32 U
+BJV2WY5DJMJQXGZJANFZSAYLXMVZW63LFEEQFY3ZP           # base32 B
 zYAjKoNbau5KiqmHPmSxYCvn66dA1vLmwbt                 # base58 z
-yTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==               # base64 y
+MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==               # base64 M
 ```
 
-The base prefixes used are: `F, U, z, y`.
+The base prefixes used are: `F, B, z, M`.
 
 
 ## FAQ
