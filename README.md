@@ -127,6 +127,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [java-multibase](//github.com/multiformats/java-multibase)
 - [py-multibase](//github.com/multiformats/py-multibase)
 - [haskell-multibase](//github.com/multiformats/haskell-multibase)
+- [net-ipfs-core](//github.com/richardschneider/net-ipfs-core)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
 
