@@ -1,36 +1,23 @@
 # Base2
 
+The multibase base2 prefix is the character `0`. Canonical multibase-base2
+encoded data will always be `8k+1` characters long.
+
 ## Encoding
 
-A byte array (or a string represented by a byte array, eg. UTF-8) is encoded to
-multibase base2 by prefixing the character `0` to the encoding of the byte array
-in base2. The length of the multibase base2 encoding of a byte array of length
-_k_ is _8k+1_ bytes.
+A byte array is encoded to multibase base2 by prefixing its base2 encoding with
+the character `0`.
 
-The encoding of the byte array in base2 is obtained by concatenating the base2
-representations of each byte in the array, in the order the bytes are in the
-array.
+A byte array is encoded to base2 by concatenating the base2 representations of
+each byte in the array, in order.
 
 The base2 representation of a byte is a byte array of length 8 in big-endian
 order, where each byte of the array is set to the character `1`, if the
 corresponding bit in the byte is set, and the character `0` if the corresponding
 bit is unset.
 
-The character `0` means the hexadecimal value `0x30`
-(ASCII character `0`, decimal value 48).
-
-The character `1` means the hexadecimal value `0x31`
-(ASCII character `1`, decimal value 49).
-
-For example, the base2 representation of the ASCII character `Y`, or the
-hexadecimal value `0x59` is `"01011001"`. The corresponding multibase base2
-encoding of the character `Y` is `"001011001"`
-
-The base2 encoding of any byte array must not contain any other bytes apart from
-the characters `0` and `1`.
-
-The entire process of encoding the byte array `[0x58, 0x59, 0x60]`
-is as follows:
+For example, `[0x58, 0x59, 0x60]` can be converted to multibase base2 as
+follows:
 
 ```
 map each byte to the base2 representation:
@@ -46,15 +33,14 @@ prefix with '0':
 ## Decoding
 
 The canonical format of multibase base2 encoding is decoded by dropping the
-first byte (which must be the character `0`), dividing the remaining byte array
-to _k_ sections of length _8_, and mapping to each byte in an output buffer of
-_k_ bytes the binary value of the corresponding section.
+multibase prefix (which must be the character `0`), dividing the remaining
+character sequence into _k_ sections of length _8_, then converting each section
+into it's corresponding byte value.
 
-The binary value of a byte section is obtained by taking the bytes of the
-section in big-endian order, and setting the corresponding bit in the output
-byte if the byte is `1`, and leaving the bit unset if `0`.
+The byte value of each section is obtained by mapping each '0' or '1' character
+to a 0 or 1 bit in the resulting byte (MSB first).
 
-For example, the binary value of the byte section `"00110111"` is `0x37`.
+For example, the byte value of `"00110111"` is `0x37`.
 
 The process, with input `"00100000101000010"`:
 
@@ -70,9 +56,9 @@ set the correct bits:
 ```
 
 A non-canonical encoding of multibase base2 whose length is not equal to _8k+1_
-for some _k_, may be decoded by dropping the first byte, and then prefixing to
-the encoding the smallest number of bytes that makes the length of the encoding
-be canonical, and then decoding it as if it were in the canonical base2 form.
-For example, the non-canonical encoding `"011010"` may be decoded like the
-canonical base2 encoding `"000" + "11010"` to get `0x1a`. A standard multibase
-implementation must not output non-canonical encoding.
+characters for some _k_ may be canonicalized by left-padding the string with '0'
+characters (until the length is _8k+1_). The string can then be decoded normally.
+
+For example, the non-canonical encoding `"011010"` may be canonicalized to
+`"000011010"` (decoded as `[0x1a]`). A standard multibase implementation must
+output base2 in the *canonical* encoding only.
