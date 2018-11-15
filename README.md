@@ -40,24 +40,29 @@ Where `<varint-base-encoding-code>` is used according to the multibase table. No
 The current multibase table is [here](multibase.csv):
 
 ```
-encoding      codes   name
-identity      0x00    8-bit binary (encoder and decoder keeps data unmodified)
-base1         1       unary tends to be 11111
-base2         0       binary has 1 and 0
-base8         7       highest char in octal
-base10        9       highest char in decimal
-base16        F, f    highest char in hex
-base32        B, b    rfc4648 - no padding - highest letter
-base32pad     C, c    rfc4648 - with padding
-base32hex     V, v    rfc4648 - no padding - highest char
-base32hexpad  T, t    rfc4648 - with padding
-base32z       h       z-base-32 - used by Tahoe-LAFS - highest letter
-base58flickr  Z       highest char
-base58btc     z       highest char
-base64        m       rfc4648 - no padding
-base64pad     M       rfc4648 - with padding - MIME encoding
-base64url     u       rfc4648 - no padding
-base64urlpad  U       rfc4648 - with padding
+encoding,           code, description
+identity,           0x00, 8-bit binary (encoder and decoder keeps data unmodified)
+base1,              1,    unary (11111)
+base2,              0,    binary (01010101)
+base8,              7,    octal
+base10,             9,    decimal
+base16,             f,    hexadecimal
+base16upper,        F,    hexadecimal
+base32hex,          v,    rfc4648 no padding - highest char
+base32hexupper,     v,    rfc4648 no padding - highest char
+base32hexpad,       t,    rfc4648 with padding
+base32hexpadupper,  T,    rfc4648 with padding
+base32,             b,    rfc4648 no padding
+base32upper,        B,    rfc4648 no padding
+base32pad,          c,    rfc4648 with padding
+base32padupper,     C,    rfc4648 with padding
+base32z,            h,    z-base-32 (used by Tahoe-LAFS)
+base58flickr,       Z,    base58 flicker
+base58btc,          z,    base58 bitcoin
+base64,             m,    rfc4648 no padding
+base64pad,          M,    rfc4648 with padding - MIME encoding
+base64url,          u,    rfc4648 no padding
+base64urlpad,       U,    rfc4648 with padding
 ```
 
 These encodings are being considered:
