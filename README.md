@@ -126,6 +126,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 ## Implementations:
 
 - [go-multibase](//github.com/multiformats/go-multibase)
+- [kotlin-multibase](//github.com/changjiashuai/kotlin-multibase)
 - [js-multibase](//github.com/multiformats/js-multibase)
 - [cs-multibase](//github.com/tabrath/cs-multibase)
 - [rust-multibase](//github.com/multiformats/rust-multibase)
