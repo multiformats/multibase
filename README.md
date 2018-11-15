@@ -135,6 +135,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [haskell-multibase](//github.com/multiformats/haskell-multibase)
 - [net-ipfs-core](//github.com/richardschneider/net-ipfs-core)
 - [elixir-multibase](//github.com/nocursor/ex-multibase)
+- [scala-multibase](//github.com/fluency03/scala-multibase)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
 
