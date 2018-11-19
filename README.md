@@ -49,7 +49,7 @@ base10,             9,    decimal
 base16,             f,    hexadecimal
 base16upper,        F,    hexadecimal
 base32hex,          v,    rfc4648 no padding - highest char
-base32hexupper,     v,    rfc4648 no padding - highest char
+base32hexupper,     V,    rfc4648 no padding - highest char
 base32hexpad,       t,    rfc4648 with padding
 base32hexpadupper,  T,    rfc4648 with padding
 base32,             b,    rfc4648 no padding
