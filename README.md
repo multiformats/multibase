@@ -30,10 +30,10 @@ Base encodings exist because transports have restrictions, use special in-band s
 The Format is:
 
 ```
-<varint-base-encoding-code><base-encoded-data>
+<base-encoding-symbol><base-encoded-data>
 ```
 
-Where `<varint-base-encoding-code>` is used according to the multibase table. Note that varints (bases above 127) are not yet supported, but planned.
+Where `<base-encoding-symbol>` is used according to the multibase table.
 
 ### Multibase Table v1.0.0-RC (semver)
 
@@ -111,14 +111,6 @@ Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something el
 
 The code values are selected such that they are included in the alphabets of the base they represent. For example, `F` is the base code for `base16 (hex)`, because `F` is in hex's 16 character alphabet. Note that the alphabets here are ASCII or UTF8 compliant. We have not found a case needing something else.
 
-> Why varints?
-
-So that we have no limitation on functions or lengths. Implementation note: you do not need to implement varints until the standard multibase table has more than 127 functions.
-
-> What kind of varints?
-
-An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigned-varint](https://github.com/multiformats/unsigned-varint).
-
 > Don't we have to agree on a table of base encodings?
 
 Yes, but we already have to agree on base encodings, so this is not hard. The table even leaves some room for custom encodings.
@@ -141,7 +133,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 
 ## Disclaimers
 
-Warning: **obviously multibase changes the first byte(s) depending on the encoding**. Do not expect the value to be exactly the same. Remove the multibase prefix before using the value.
+Warning: **obviously multibase changes the first symbol depending on the encoding**. Do not expect the value to be exactly the same. Remove the multibase prefix before using the value.
 
 ## Maintainers
 
