@@ -80,16 +80,6 @@ base64url,          u,    rfc4648 no padding
 base64urlpad,       U,    rfc4648 with padding
 ```
 
-These encodings are being considered:
-
-```
-base128
-base-emoji    😎      base emoji
-base65536     ᔰ       base65536
-utf8
-utf16
-```
-
 ## Multibase By Example
 
 Consider the following encodings of the same binary string:
