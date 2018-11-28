@@ -80,6 +80,8 @@ base64url,          u,    rfc4648 no padding
 base64urlpad,       U,    rfc4648 with padding
 ```
 
+**NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
+
 ## Multibase By Example
 
 Consider the following encodings of the same binary string:
