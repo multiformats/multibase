@@ -7,11 +7,26 @@
 
 > Self identifying base encodings
 
-Multibase is a protocol for distinguishing base encodings and other simple string encodings, and for ensuring full compatibility with program interfaces. It answers the question:
+Multibase is a protocol for distinguishing base encodings of bytes in text.
 
-> Given data d encoded into string s, how can I tell what base d is encoded with?
+When text is encoded as bytes, we can usually use a one-size-fits-all encoding
+(UTF-8) because we're always encoding to the same set of 256 bytes (+/- the NUL
+byte). When that doesn't work, usually for historical or performance reasons, we
+can usually infer the encoding from the context.
 
-Base encodings exist because transports have restrictions, use special in-band sequences, or must be human-friendly. When systems chose a base to use, it is not always clear _which_ base to use, as there are many tradeoffs in the decision. Multibase is here to save programs and programmers from worrying about which encoding is best. It solves the biggest problem: a program can use multibase to take input or produce output in whichever base is desired. The important part is that the value is self-describing, letting other programs elsewhere know what encoding it is using.
+However, when bytes are encoded as text (using a base encoding), the base choice
+of base encoding is often restricted by the context. Worse, these restrictions
+can change based on where the data appears in the text. In some cases, we can
+only use `[a-z0-9]`. In others, we can use a larger set of symbols but need a
+compact encoding. This has lead to a large set of "base encodings", one for
+every use-case. Unlike when encoding text to bytes, we can't just standardize
+around a single base encoding because there is no optimal encoding for all
+cases.
+
+Unfortunately, it's not always clear *what* base encoding is used; that's where
+multibase comes in. It answers the question:
+
+> Given data d encoded into text s, what base is it encoded with?
 
 ## Table of Contents
 
@@ -109,7 +124,7 @@ Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something el
 
 > Why the strange selection of codes / characters?
 
-The code values are selected such that they are included in the alphabets of the base they represent. For example, `F` is the base code for `base16 (hex)`, because `F` is in hex's 16 character alphabet. Note that the alphabets here are ASCII or UTF8 compliant. We have not found a case needing something else.
+The code values are selected such that they are included in the alphabets of the base they represent. For example, `F` is the base code for `base16 (hex)`, because `F` is in hex's 16 character alphabet. Note that the alphabets can be encoded in ASCII or UTF8. We have not found a case needing something else.
 
 > Don't we have to agree on a table of base encodings?
 
