@@ -7,7 +7,8 @@
 
 > Self identifying base encodings
 
-Multibase is a protocol for distinguishing base encodings of bytes in text.
+Multibase is a protocol for disambiguating the encoding of base-encoded (e.g.,
+base32, base64, base58, etc.) binary appearing in text.
 
 When text is encoded as bytes, we can usually use a one-size-fits-all encoding
 (UTF-8) because we're always encoding to the same set of 256 bytes (+/- the NUL
