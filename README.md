@@ -17,7 +17,7 @@ can usually infer the encoding from the context.
 However, when bytes are encoded as text (using a base encoding), the base choice
 of base encoding is often restricted by the context. Worse, these restrictions
 can change based on where the data appears in the text. In some cases, we can
-only use `[a-z0-9]`. In others, we can use a larger set of symbols but need a
+only use `[a-z0-9]`. In others, we can use a larger set of characters but need a
 compact encoding. This has lead to a large set of "base encodings", one for
 every use-case. Unlike when encoding text to bytes, we can't just standardize
 around a single base encoding because there is no optimal encoding for all
@@ -45,10 +45,10 @@ multibase comes in. It answers the question:
 The Format is:
 
 ```
-<base-encoding-symbol><base-encoded-data>
+<base-encoding-character><base-encoded-data>
 ```
 
-Where `<base-encoding-symbol>` is used according to the multibase table.
+Where `<base-encoding-character>` is used according to the multibase table.
 
 ### Multibase Table v1.0.0-RC (semver)
 
@@ -116,7 +116,7 @@ Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something el
 
 > Why the strange selection of codes / characters?
 
-The code values are selected such that they are included in the alphabets of the base they represent. For example, `F` is the base code for `base16 (hex)`, because `F` is in hex's 16 character alphabet. Note that the alphabets can be encoded in ASCII or UTF8. We have not found a case needing something else.
+The code values are selected such that they are included in the alphabets of the base they represent. For example, `f` is the base code for `base16 (hex)`, because `f` is in hex's 16 character alphabet. Note that the alphabets can be encoded in ASCII or UTF8. We have not found a case needing something else.
 
 > Don't we have to agree on a table of base encodings?
 
@@ -140,7 +140,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 
 ## Disclaimers
 
-Warning: **obviously multibase changes the first symbol depending on the encoding**. Do not expect the value to be exactly the same. Remove the multibase prefix before using the value.
+Warning: **obviously multibase changes the first character depending on the encoding**. Do not expect the value to be exactly the same. Remove the multibase prefix before using the value.
 
 ## Maintainers
 
