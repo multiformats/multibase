@@ -143,10 +143,6 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 
 Warning: **obviously multibase changes the first character depending on the encoding**. Do not expect the value to be exactly the same. Remove the multibase prefix before using the value.
 
-## Maintainers
-
-Captain: [@jbenet](https://github.com/jbenet).
-
 ## Contribute
 
 Contributions welcome. Please check out [the issues](https://github.com/multiformats/multibase/issues).
