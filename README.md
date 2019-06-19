@@ -137,6 +137,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [elixir-multibase](//github.com/nocursor/ex-multibase)
 - [scala-multibase](//github.com/fluency03/scala-multibase)
 - [cpp-multibase](//github.com/cpp-ipfs/cpp-multibase)
+- [ruby-multibase](//github.com/sleeplessbyte/ruby-multibase)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
 
