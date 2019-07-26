@@ -58,7 +58,6 @@ The current multibase table is [here](multibase.csv):
 ```
 encoding,           code, description
 identity,           0x00, 8-bit binary (encoder and decoder keeps data unmodified)
-base1,              1,    unary (11111)
 base2,              0,    binary (01010101)
 base8,              7,    octal
 base10,             9,    decimal
