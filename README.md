@@ -82,6 +82,16 @@ base64urlpad,       U,    rfc4648 with padding
 
 **NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
 
+## Reserved
+
+The following codes are _reserved_ for backwards compatibility with existing systems.
+
+* `1` - Base58 encoded identity multihashes used by libp2p peer IDs.
+* `Q` - Base58 encoded sha2-256 multihashes used by libp2p/ipfs for peer IDs and CIDv0.
+
+If you'd like to switch a project over to multibase and would also like to
+reserve a prefix for compatibility, please file an issue.
+
 ## Multibase By Example
 
 Consider the following encodings of the same binary string:
