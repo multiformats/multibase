@@ -1,4 +1,4 @@
-# multibase (WIP)
+# multibase
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](https://github.com/multiformats/multiformats)
@@ -32,7 +32,7 @@ multibase comes in. It answers the question:
 ## Table of Contents
 
 - [Format](#format)
-  - [Multibase Table v1.0.0-RC (semver)](#multibase-table-v100-rc-semver)
+  - [Multibase Table](#multibase-table)
 - [Multibase By Example](#multibase-by-example)
 - [FAQ](#faq)
 - [Implementations:](#implementations)
@@ -51,7 +51,7 @@ The Format is:
 
 Where `<base-encoding-character>` is used according to the multibase table.
 
-### Multibase Table v1.0.0-RC (semver)
+### Multibase Table
 
 The current multibase table is [here](multibase.csv):
 
