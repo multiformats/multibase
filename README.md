@@ -57,27 +57,27 @@ The current multibase table is [here](multibase.csv):
 
 ```
 encoding,          code, description,                                              status
-identity,          0x00, 8-bit binary (encoder and decoder keeps data unmodified), recommendation
+identity,          0x00, 8-bit binary (encoder and decoder keeps data unmodified), default
 base2,             0,    binary (01010101),                                        candidate
 base8,             7,    octal,                                                    draft
 base10,            9,    decimal,                                                  draft
-base16,            f,    hexadecimal,                                              recommendation
-base16upper,       F,    hexadecimal,                                              recommendation
+base16,            f,    hexadecimal,                                              default
+base16upper,       F,    hexadecimal,                                              default
 base32hex,         v,    rfc4648 no padding - highest char,                        candidate
 base32hexupper,    V,    rfc4648 no padding - highest char,                        candidate
 base32hexpad,      t,    rfc4648 with padding,                                     candidate
 base32hexpadupper, T,    rfc4648 with padding,                                     candidate
-base32,            b,    rfc4648 no padding,                                       recommendation
-base32upper,       B,    rfc4648 no padding,                                       recommendation
+base32,            b,    rfc4648 no padding,                                       default
+base32upper,       B,    rfc4648 no padding,                                       default
 base32pad,         c,    rfc4648 with padding,                                     candidate
 base32padupper,    C,    rfc4648 with padding,                                     candidate
 base32z,           h,    z-base-32 (used by Tahoe-LAFS),                           draft
 base58flickr,      Z,    base58 flicker,                                           candidate
-base58btc,         z,    base58 bitcoin,                                           recommendation
-base64,            m,    rfc4648 no padding,                                       recommendation
+base58btc,         z,    base58 bitcoin,                                           default
+base64,            m,    rfc4648 no padding,                                       default
 base64pad,         M,    rfc4648 with padding - MIME encoding,                     candidate
-base64url,         u,    rfc4648 no padding,                                       recommendation
-base64urlpad,      U,    rfc4648 with padding,                                     recommendation
+base64url,         u,    rfc4648 no padding,                                       default
+base64urlpad,      U,    rfc4648 with padding,                                     default
 ```
 
 **NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
@@ -98,7 +98,7 @@ Each multibase encoding has a status:
 
 * draft - these encodings have been proposed but are not widely implemented and may be removed.
 * candidate - these encodings are mature and widely implemented but may not be implemented by all implementations.
-* recommendation - these encodings should be implemented by all implementations and are widely used.
+* default - these encodings should be implemented by all implementations and are widely used.
 
 ## Multibase By Example
 
