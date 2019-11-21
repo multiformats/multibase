@@ -1,6 +1,6 @@
 ### Intro
 
-`base32cx` is a base-32 encoding with letter-case checksums inspired by the success of Ethereum’s EIP55.
+`base32cx` is a base-32 encoding with letter-case checksums inspired by the success of Ethereum’s [EIP55](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md).
 
 It is designed for encoding relatively short byte strings presented as human-skimmable strings, like file hashes or cryptocurrency addresses.
 
@@ -61,3 +61,7 @@ This makes unchecked data appear uniform while checked data appears mixed-height
 It is most likely not an appropriate choice of encoding for larger data.
 For completeness, a standard method for hashing large data and applying the checksum in chunks will be specified in the future.
 Until then, base32cx is simply not defined if the data to be encoded is longer than 2^20 - 1 bytes.
+
+### Source
+
+The spec was originally posted and is being maintained [here](https://word.site/2019/11/13/base32cx/).
