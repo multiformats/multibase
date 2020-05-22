@@ -72,8 +72,8 @@ base32upper,       B,    rfc4648 case-insensitive - no padding,                 
 base32pad,         c,    rfc4648 case-insensitive - with padding,                  candidate
 base32padupper,    C,    rfc4648 case-insensitive - with padding,                  candidate
 base32z,           h,    z-base-32 (used by Tahoe-LAFS),                           draft
-base36,            k,    base36 [0-9a-z] case-insensitive - no padding,            default
-base36upper,       K,    base36 [0-9a-z] case-insensitive - no padding,            default
+base36,            k,    base36 [0-9a-z] case-insensitive - no padding,            draft
+base36upper,       K,    base36 [0-9a-z] case-insensitive - no padding,            draft
 base58btc,         z,    base58 bitcoin,                                           default
 base58flickr,      Z,    base58 flicker,                                           candidate
 base64,            m,    rfc4648 no padding,                                       default

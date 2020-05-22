@@ -9,7 +9,7 @@ A byte array is encoded to base36 by:
 
 1. Counting the number of leading 0 bytes (Z).
 2. Interpreting the rest of the byte array as a big-endian unsigned integer (N).
-3. Concatenating a length Z string of '0' characters with the decimal
+3. Concatenating a length Z string of '0' characters with the base36
    representation of N.
 
 A byte array is encoded to multibase base36 by prefixing its base36 encoding
@@ -32,7 +32,7 @@ The remaining characters are then converted to a byte array by:
 
 Byte Array <-> Base36 Multibase:
 
-| Bytes | ==  | LC Base36 | OR | UC base36 |
+| Bytes | ==  | LC Base36 | OR | UC Base36 |
 |---|---|---|---|---|
 | `[0x00, 0x01]`       | == | `"k01"`   | | `"K01"`   |
 | `[0x00, 0x00, 0xff]` | == | `"k0073"` | | `"K0073"` |
