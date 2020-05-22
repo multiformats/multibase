@@ -8,7 +8,7 @@
 > Self identifying base encodings
 
 Multibase is a protocol for disambiguating the encoding of base-encoded (e.g.,
-base32, base64, base58, etc.) binary appearing in text.
+base32, base36, base64, base58, etc.) binary appearing in text.
 
 When text is encoded as bytes, we can usually use a one-size-fits-all encoding
 (UTF-8) because we're always encoding to the same set of 256 bytes (+/- the NUL
@@ -63,17 +63,19 @@ base8,             7,    octal,                                                 
 base10,            9,    decimal,                                                  draft
 base16,            f,    hexadecimal,                                              default
 base16upper,       F,    hexadecimal,                                              default
-base32hex,         v,    rfc4648 no padding - highest char,                        candidate
-base32hexupper,    V,    rfc4648 no padding - highest char,                        candidate
-base32hexpad,      t,    rfc4648 with padding,                                     candidate
-base32hexpadupper, T,    rfc4648 with padding,                                     candidate
-base32,            b,    rfc4648 no padding,                                       default
-base32upper,       B,    rfc4648 no padding,                                       default
-base32pad,         c,    rfc4648 with padding,                                     candidate
-base32padupper,    C,    rfc4648 with padding,                                     candidate
+base32hex,         v,    rfc4648 case-insensitive - no padding - highest char,     candidate
+base32hexupper,    V,    rfc4648 case-insensitive - no padding - highest char,     candidate
+base32hexpad,      t,    rfc4648 case-insensitive - with padding,                  candidate
+base32hexpadupper, T,    rfc4648 case-insensitive - with padding,                  candidate
+base32,            b,    rfc4648 case-insensitive - no padding,                    default
+base32upper,       B,    rfc4648 case-insensitive - no padding,                    default
+base32pad,         c,    rfc4648 case-insensitive - with padding,                  candidate
+base32padupper,    C,    rfc4648 case-insensitive - with padding,                  candidate
 base32z,           h,    z-base-32 (used by Tahoe-LAFS),                           draft
-base58flickr,      Z,    base58 flicker,                                           candidate
+base36,            k,    base36 [0-9a-z] case-insensitive - no padding,            default
+base36upper,       K,    base36 [0-9a-z] case-insensitive - no padding,            default
 base58btc,         z,    base58 bitcoin,                                           default
+base58flickr,      Z,    base58 flicker,                                           candidate
 base64,            m,    rfc4648 no padding,                                       default
 base64pad,         M,    rfc4648 with padding - MIME encoding,                     candidate
 base64url,         u,    rfc4648 no padding,                                       default
@@ -107,6 +109,7 @@ Consider the following encodings of the same binary string:
 ```
 4D756C74696261736520697320617765736F6D6521205C6F2F # base16 (hex)
 JV2WY5DJMJQXGZJANFZSAYLXMVZW63LFEEQFY3ZP           # base32
+3IY8QKL64VUGCX009XWUHKF6GBBTS3TVRXFRA5R            # base36
 YAjKoNbau5KiqmHPmSxYCvn66dA1vLmwbt                 # base58
 TXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==               # base64
 ```
@@ -116,11 +119,12 @@ And consider the same encodings with their multibase prefix
 ```
 F4D756C74696261736520697320617765736F6D6521205C6F2F # base16 F
 BJV2WY5DJMJQXGZJANFZSAYLXMVZW63LFEEQFY3ZP           # base32 B
+K3IY8QKL64VUGCX009XWUHKF6GBBTS3TVRXFRA5R            # base36 K
 zYAjKoNbau5KiqmHPmSxYCvn66dA1vLmwbt                 # base58 z
 MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==               # base64 M
 ```
 
-The base prefixes used are: `F, B, z, M`.
+The base prefixes used are: `F, B, K, z, M`.
 
 
 ## FAQ

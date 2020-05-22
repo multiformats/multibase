@@ -5,19 +5,19 @@ base8,             7,    octal,                                                 
 base10,            9,    decimal,                                                  draft
 base16,            f,    hexadecimal,                                              default
 base16upper,       F,    hexadecimal,                                              default
-base32hex,         v,    rfc4648 no padding - highest char,                        candidate
-base32hexupper,    V,    rfc4648 no padding - highest char,                        candidate
-base32hexpad,      t,    rfc4648 with padding,                                     candidate
-base32hexpadupper, T,    rfc4648 with padding,                                     candidate
-base32,            b,    rfc4648 no padding,                                       default
-base32upper,       B,    rfc4648 no padding,                                       default
-base32pad,         c,    rfc4648 with padding,                                     candidate
-base32padupper,    C,    rfc4648 with padding,                                     candidate
+base32hex,         v,    rfc4648 case-insensitive - no padding - highest char,     candidate
+base32hexupper,    V,    rfc4648 case-insensitive - no padding - highest char,     candidate
+base32hexpad,      t,    rfc4648 case-insensitive - with padding,                  candidate
+base32hexpadupper, T,    rfc4648 case-insensitive - with padding,                  candidate
+base32,            b,    rfc4648 case-insensitive - no padding,                    default
+base32upper,       B,    rfc4648 case-insensitive - no padding,                    default
+base32pad,         c,    rfc4648 case-insensitive - with padding,                  candidate
+base32padupper,    C,    rfc4648 case-insensitive - with padding,                  candidate
 base32z,           h,    z-base-32 (used by Tahoe-LAFS),                           draft
-base36upper,       K,    base36 [0-9a-z] case-insensitive no padding,              default
-base36,            k,    base36 [0-9a-z] case-insensitive no padding,              default
-base58flickr,      Z,    base58 flicker,                                           candidate
+base36,            k,    base36 [0-9a-z] case-insensitive - no padding,            default
+base36upper,       K,    base36 [0-9a-z] case-insensitive - no padding,            default
 base58btc,         z,    base58 bitcoin,                                           default
+base58flickr,      Z,    base58 flicker,                                           candidate
 base64,            m,    rfc4648 no padding,                                       default
 base64pad,         M,    rfc4648 with padding - MIME encoding,                     candidate
 base64url,         u,    rfc4648 no padding,                                       default
