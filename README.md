@@ -80,6 +80,7 @@ base64,            m,    rfc4648 no padding,                                    
 base64pad,         M,    rfc4648 with padding - MIME encoding,                     candidate
 base64url,         u,    rfc4648 no padding,                                       default
 base64urlpad,      U,    rfc4648 with padding,                                     default
+proquint,          p,    PRO-QUINT https://arxiv.org/html/0901.4016,               draft
 ```
 
 **NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
