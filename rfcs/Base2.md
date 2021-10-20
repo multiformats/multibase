@@ -16,7 +16,7 @@ order, where each byte of the array is set to the character `1`, if the
 corresponding bit in the byte is set, and the character `0` if the corresponding
 bit is unset.
 
-For example, `[0x58, 0x59, 0x60]` can be converted to multibase base2 as
+For example, `[0x58, 0x59, 0x5a]` can be converted to multibase base2 as
 follows:
 
 ```
