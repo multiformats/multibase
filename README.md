@@ -85,6 +85,23 @@ proquint,          p,    pro-quint https://arxiv.org/html/0901.4016 (see RFC),  
 
 **NOTE:** Multibase-prefixes are encoding agnostic: "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`. In particular, the multibase code 0x00 listed for the identity encoding is the non-printable ASCII/UTF-8 character with codepoint 0x00, while the multibase code 0 listed for base2 is the ASCII/UTF-8 character "0" (which has codepoint 0x30).
 
+## Specifications
+
+Below is a list of specs for the underlying base encodings:
+
+- `identity` [identity RFC](rfcs/identity.md)
+- `base2` [base2 RFC](rfcs/Base2.md)
+- `base8` [base8 RFC](rfcs/Base8.md), similar to [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base10` [base10 RFC](rfcs/Base10.md)
+- `base36` [base36 RFC](rfcs/Base36.md)
+- `base16*` [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base32*` (except for `base32z`) [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base32z` [human-oriented base32 spec](https://philzimmermann.com/docs/human-oriented-base-32-encoding.txt)
+- `base64*` [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base58btc` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02
+- `base58flickr` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02, but using alphabet `123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ`
+- `proquint` [proquint RFC](rfcs/PRO-QUINT.md), which is the [original spec](https://arxiv.org/html/0901.4016) with an added prefix for legibility
+
 ## Reserved
 
 The following codes are _reserved_ for backwards compatibility with existing systems.
