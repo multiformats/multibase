@@ -59,7 +59,7 @@ The current multibase table is [here](multibase.csv):
 encoding,          code, description,                                              status
 identity,          0x00, 8-bit binary (encoder and decoder keeps data unmodified), default
 base2,             0,    binary (01010101),                                        candidate
-base8,             7,    octal,                                                    draft
+base8,             7,    octal (see RFC),                                          draft
 base10,            9,    decimal,                                                  draft
 base16,            f,    hexadecimal,                                              default
 base16upper,       F,    hexadecimal,                                              default
@@ -80,10 +80,10 @@ base64,            m,    rfc4648 no padding,                                    
 base64pad,         M,    rfc4648 with padding - MIME encoding,                     candidate
 base64url,         u,    rfc4648 no padding,                                       default
 base64urlpad,      U,    rfc4648 with padding,                                     default
-proquint,          p,    PRO-QUINT https://arxiv.org/html/0901.4016,               draft
+proquint,          p,    pro-quint https://arxiv.org/html/0901.4016 (see RFC),     draft
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
+**NOTE:** Multibase-prefixes are encoding agnostic: "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`. In particular, the multibase code 0x00 listed for the identity encoding is the non-printable ASCII/UTF-8 character with codepoint 0x00, while the multibase code 0 listed for base2 is the ASCII/UTF-8 character "0" (which has codepoint 0x30).
 
 ## Reserved
 
