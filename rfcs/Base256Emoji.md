@@ -37,7 +37,7 @@ You can find out the correspondance using this table:
 | 🌍 | U+1F30D | 13 |
 | 🌏 | U+1F30F | 14 |
 | 🌎 | U+1F30E | 15 |
-| ☉ | U+1F409 | 16 |
+| 🐉 | U+1F409 | 16 |
 | ☀ | U+2600 | 17 |
 | 💻 | U+1F4BB | 18 |
 | 🖥 | U+1F5A5 | 19 |
