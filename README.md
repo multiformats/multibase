@@ -140,7 +140,7 @@ Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something el
 
 > Why the strange selection of codes / characters?
 
-The code values are selected such that they are included in the alphabets of the base they represent. For example, `f` is the base code for `base16 (hex)`, because `f` is in hex's 16 character alphabet. Note that the alphabets can be encoded in ASCII or UTF8. We have not found a case needing something else.
+The code values are selected such that they are included in the alphabets of the base they represent. For example, `f` is the base code for `base16 (hex)`, because `f` is in hex's 16 character alphabet. Note that the alphabets can be encoded in UTF8, and most can be encoded in ASCII. We have not found a case needing something else.
 
 > Don't we have to agree on a table of base encodings?
 
