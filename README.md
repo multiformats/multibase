@@ -161,6 +161,7 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [scala-multibase](//github.com/fluency03/scala-multibase)
 - [cpp-multibase](//github.com/cpp-ipfs/cpp-multibase)
 - [ruby-multibase](//github.com/sleeplessbyte/ruby-multibase)
+- [dart-multibase](//github.com/heacare/dart-multibase)
 - [yoclib-multibase-php](//github.com/yocto/yoclib-multibase-php)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
