@@ -87,8 +87,9 @@ proquint,          p,    PRO-QUINT https://arxiv.org/html/0901.4016,            
 
 ## Reserved
 
-The following codes are _reserved_ for backwards compatibility with existing systems.
+The following codes are _reserved_ for (backwards) compatibility with existing systems.
 
+* `/` - Separator used by [multiaddr](https://github.com/multiformats/multiaddr).
 * `1` - Base58 encoded identity multihashes used by libp2p peer IDs.
 * `Q` - Base58 encoded sha2-256 multihashes used by libp2p/ipfs for peer IDs and CIDv0.
 
