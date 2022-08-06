@@ -56,31 +56,32 @@ Where `<base-encoding-character>` is used according to the multibase table.
 The current multibase table is [here](multibase.csv):
 
 ```
-encoding,          code, description,                                              status
-identity,          0x00, 8-bit binary (encoder and decoder keeps data unmodified), default
-base2,             0,    binary (01010101),                                        candidate
-base8,             7,    octal,                                                    draft
-base10,            9,    decimal,                                                  draft
-base16,            f,    hexadecimal,                                              default
-base16upper,       F,    hexadecimal,                                              default
-base32hex,         v,    rfc4648 case-insensitive - no padding - highest char,     candidate
-base32hexupper,    V,    rfc4648 case-insensitive - no padding - highest char,     candidate
-base32hexpad,      t,    rfc4648 case-insensitive - with padding,                  candidate
-base32hexpadupper, T,    rfc4648 case-insensitive - with padding,                  candidate
-base32,            b,    rfc4648 case-insensitive - no padding,                    default
-base32upper,       B,    rfc4648 case-insensitive - no padding,                    default
-base32pad,         c,    rfc4648 case-insensitive - with padding,                  candidate
-base32padupper,    C,    rfc4648 case-insensitive - with padding,                  candidate
-base32z,           h,    z-base-32 (used by Tahoe-LAFS),                           draft
-base36,            k,    base36 [0-9a-z] case-insensitive - no padding,            draft
-base36upper,       K,    base36 [0-9A-Z] case-insensitive - no padding,            draft
-base58btc,         z,    base58 bitcoin,                                           default
-base58flickr,      Z,    base58 flicker,                                           candidate
-base64,            m,    rfc4648 no padding,                                       default
-base64pad,         M,    rfc4648 with padding - MIME encoding,                     candidate
-base64url,         u,    rfc4648 no padding,                                       default
-base64urlpad,      U,    rfc4648 with padding,                                     default
-proquint,          p,    PRO-QUINT https://arxiv.org/html/0901.4016,               draft
+encoding,          code, description,                                                  status
+identity,          0x00, 8-bit binary (encoder and decoder keeps data unmodified),     default
+base2,             0,    binary (01010101),                                            candidate
+base8,             7,    octal,                                                        draft
+base10,            9,    decimal,                                                      draft
+base16,            f,    hexadecimal,                                                  default
+base16upper,       F,    hexadecimal,                                                  default
+base32hex,         v,    rfc4648 case-insensitive - no padding - highest char,         candidate
+base32hexupper,    V,    rfc4648 case-insensitive - no padding - highest char,         candidate
+base32hexpad,      t,    rfc4648 case-insensitive - with padding,                      candidate
+base32hexpadupper, T,    rfc4648 case-insensitive - with padding,                      candidate
+base32,            b,    rfc4648 case-insensitive - no padding,                        default
+base32upper,       B,    rfc4648 case-insensitive - no padding,                        default
+base32pad,         c,    rfc4648 case-insensitive - with padding,                      candidate
+base32padupper,    C,    rfc4648 case-insensitive - with padding,                      candidate
+base32z,           h,    z-base-32 (used by Tahoe-LAFS),                               draft
+base36,            k,    base36 [0-9a-z] case-insensitive - no padding,                draft
+base36upper,       K,    base36 [0-9a-z] case-insensitive - no padding,                draft
+base58btc,         z,    base58 bitcoin,                                               default
+base58flickr,      Z,    base58 flicker,                                               candidate
+base64,            m,    rfc4648 no padding,                                           default
+base64pad,         M,    rfc4648 with padding - MIME encoding,                         candidate
+base64url,         u,    rfc4648 no padding,                                           default
+base64urlpad,      U,    rfc4648 with padding,                                         default
+proquint,          p,    PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
+base256emoji,      🚀,    base256 with custom alphabet using variable-sized-codepoints, draft
 ```
 
 **NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
@@ -140,7 +141,7 @@ Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something el
 
 > Why the strange selection of codes / characters?
 
-The code values are selected such that they are included in the alphabets of the base they represent. For example, `f` is the base code for `base16 (hex)`, because `f` is in hex's 16 character alphabet. Note that the alphabets can be encoded in ASCII or UTF8. We have not found a case needing something else.
+The code values are selected such that they are included in the alphabets of the base they represent. For example, `f` is the base code for `base16 (hex)`, because `f` is in hex's 16 character alphabet. Note that the alphabets can be encoded in UTF8, and most can be encoded in ASCII. We have not found a case needing something else.
 
 > Don't we have to agree on a table of base encodings?
 
@@ -161,6 +162,8 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [scala-multibase](//github.com/fluency03/scala-multibase)
 - [cpp-multibase](//github.com/cpp-ipfs/cpp-multibase)
 - [ruby-multibase](//github.com/sleeplessbyte/ruby-multibase)
+- [dart-multibase](//github.com/heacare/dart-multibase)
+- [yoclib-multibase-php](//github.com/yocto/yoclib-multibase-php)
 - [Add yours here!](//github.com/multiformats/multibase/edit/master/README.md)
 
 
