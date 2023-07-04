@@ -29,10 +29,12 @@ multibase comes in. It answers the question:
 
 > Given binary data d encoded into text s, what base b was used to encode it?
 
-To answer this question, a single-byte prefix is added to d that renders (upon
+To answer this question, a binary prefix `bp` is added to `d` that renders (upon
 b-encoding) as a one-character (or in the case of non-ASCII text like the emoji
-alphabet, one-symbol) prefix to s.  This prefix is the "code" that makes b
-visible in s.
+alphabet, one-symbol) prefix, `sp`.  This prefix `sp` is the "code" that makes
+`b` visible in `s`.  For most entries, `bp` is a single byte in UTF-8, but in
+the case of the emoji alphabet, UTF-16 is required to achieve a single-byte
+binary prefix.
 
 ## Table of Contents
 
@@ -64,32 +66,32 @@ Where `<base-encoding-character>` is used according to the multibase table.
 The current multibase table is [here](multibase.csv):
 
 ```
-encoding,          code,        description,                                                  status
-identity,          0x00 (NUL),  8-bit binary (encoder and decoder keeps data unmodified),     default
-base2,             0x30 (0),    binary (01010101),                                            candidate
-base8,             0x37 (7),    octal,                                                        draft
-base10,            0x39 (9),    decimal,                                                      draft
-base16,            0x66 (f),    hexadecimal,                                                  default
-base16upper,       0x46 (F),    hexadecimal,                                                  default
-base32hex,         0x76 (v),    rfc4648 case-insensitive - no padding - highest char,         candidate
-base32hexupper,    0x56 (V),    rfc4648 case-insensitive - no padding - highest char,         candidate
-base32hexpad,      0x74 (t),    rfc4648 case-insensitive - with padding,                      candidate
-base32hexpadupper, 0x54 (T),    rfc4648 case-insensitive - with padding,                      candidate
-base32,            0x62 (b),    rfc4648 case-insensitive - no padding,                        default
-base32upper,       0x42 (B),    rfc4648 case-insensitive - no padding,                        default
-base32pad,         0x63 (c),    rfc4648 case-insensitive - with padding,                      candidate
-base32padupper,    0x43 (C),    rfc4648 case-insensitive - with padding,                      candidate
-base32z,           0x68 (h),    z-base-32 (used by Tahoe-LAFS),                               draft
-base36,            0x6b (k),    base36 [0-9a-z] case-insensitive - no padding,                draft
-base36upper,       0x4b (K),    base36 [0-9a-z] case-insensitive - no padding,                draft
-base58btc,         0x7a (z),    base58 bitcoin,                                               default
-base58flickr,      0x5a (Z),    base58 flicker,                                               candidate
-base64,            0x6d (m),    rfc4648 no padding,                                           default
-base64pad,         0x4d (M),    rfc4648 with padding - MIME encoding,                         candidate
-base64url,         0x75 (u),    rfc4648 no padding,                                           default
-base64urlpad,      0x55 (U),    rfc4648 with padding,                                         default
-proquint,          0x70 (p),    PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
-base256emoji,      0xe7 (🚀),    base256 with custom alphabet using variable-sized-codepoints, draft
+encoding, code,prefix (UTF-8), description,                                                  status, comments
+identity,          NUL, 0x00,  8-bit binary (encoder and decoder keeps data unmodified),     default,
+base2,             0,   0x30,  binary (01010101),                                            candidate
+base8,             7,   0x37,  octal,                                                        draft
+base10,            9,   0x39,  decimal,                                                      draft
+base16,            f,   0x66,  hexadecimal,                                                  default
+base16upper,       F,   0x46,  hexadecimal,                                                  default
+base32hex,         v,   0x76,  rfc4648 case-insensitive - no padding - highest char,         candidate
+base32hexupper,    V,   0x56,  rfc4648 case-insensitive - no padding - highest char,         candidate
+base32hexpad,      t,   0x74,  rfc4648 case-insensitive - with padding,                      candidate
+base32hexpadupper, T,   0x54,  rfc4648 case-insensitive - with padding,                      candidate
+base32,            b,   0x62,  rfc4648 case-insensitive - no padding,                        default
+base32upper,       B,   0x42,  rfc4648 case-insensitive - no padding,                        default
+base32pad,         c,   0x63,    rfc4648 case-insensitive - with padding,                      candidate
+base32padupper,    C,   0x43,    rfc4648 case-insensitive - with padding,                      candidate
+base32z,           h,   0x68,    z-base-32 (used by Tahoe-LAFS),                               draft
+base36,            k,   0x6b,    base36 [0-9a-z] case-insensitive - no padding,                draft
+base36upper,       K,   0x4b,    base36 [0-9a-z] case-insensitive - no padding,                draft
+base58btc,         z,   0x7a,    base58 bitcoin,                                               default
+base58flickr,      Z,   0x5a,    base58 flicker,                                               candidate
+base64,            m,   0x6d,    rfc4648 no padding,                                           default
+base64pad,         M,   0x4d,    rfc4648 with padding - MIME encoding,                         candidate
+base64url,         u,   0x75,    rfc4648 no padding,                                           default
+base64urlpad,      U,   0x55,    rfc4648 with padding,                                         default
+proquint,          p,   0x70,    PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
+base256emoji,      🚀,  0x0xF09F9A80,    base256 with custom alphabet using variable-sized-codepoints (prefix 0xe7 in UTF-16), draft
 ```
 
 **NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`.
