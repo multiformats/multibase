@@ -30,11 +30,9 @@ multibase comes in. It answers the question:
 > Given binary data d encoded into text s, what base b was used to encode it?
 
 To answer this question, a binary prefix `dp` is added to `d` that renders (upon
-b-encoding) as a one-character (or in the case of non-ASCII text like the
-Unicode emoji alphabet, a one-symbol) prefix, `sp`.  This prefix `sp` is the
-"code" that makes `b` visible in `s`.  For most entries, `dp` is a single byte
-in UTF-8, but in the case of the emoji alphabet, the single-byte property may
-only be present in other encodings.
+b-encoding) as a one-codepoint prefix, `sp` (note: most entries only concern
+themselves with UTF-8 encodings where one codepoint = one character).  This
+prefix `sp` is the "code" that makes `b` visible in `s`.
 
 ## Table of Contents
 
@@ -91,10 +89,10 @@ base64pad,         M,   0x4d,    rfc4648 with padding - MIME encoding,          
 base64url,         u,   0x75,    rfc4648 no padding,                                           default
 base64urlpad,      U,   0x55,    rfc4648 with padding,                                         default
 proquint,          p,   0x70,    PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
-base256emoji,      🚀,  0xF09F9A80,    base256 with custom alphabet using variable-sized-codepoints, draft
+base256emoji,      🚀 (Unicode U+1F680),  0xF09F9A80,    base256 with custom alphabet using variable-sized-codepoints, draft
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic, and conformance is tested by the prefix code in the string, not the binary prefix, however encoded. I.e., the code is `z` (in BTC-alphabet base 58), not `0x7a` (the binary that becomes the `z` encoded in ASCII/UTF-8). Note that the same binary, in UTF-32, would be `[0x7a, 0x00, 0x00, 0x00]` to produce the same `z` with the base and alphabet.
+**NOTE:** Multibase-prefixes are encoding agnostic, and conformance is tested by the prefix code in the string, not the binary prefix, however encoded. I.e., the code is the `z` codepoint (in BTC-alphabet base 58), not `0x7a` (the binary that becomes the `z` encoded in ASCII/UTF-8). Note that the same binary, in UTF-32, would be `[0x7a, 0x00, 0x00, 0x00]` to produce the same `z` with the base and alphabet.
 
 ## Reserved
 
