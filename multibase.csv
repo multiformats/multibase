@@ -23,4 +23,4 @@ base64pad,         M,   0x4d,    rfc4648 with padding - MIME encoding,          
 base64url,         u,   0x75,    rfc4648 no padding,                                           default
 base64urlpad,      U,   0x55,    rfc4648 with padding,                                         default
 proquint,          p,   0x70,    PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
-base256emoji,      🚀 (Unicode U+1F680),  0x0xF09F9A80,    base256 with custom alphabet using variable-sized-codepoints, draft
+base256emoji,      🚀 (Unicode U+1F680),  0xF09F9A80,    base256 with custom alphabet using variable-sized-codepoints, draft
