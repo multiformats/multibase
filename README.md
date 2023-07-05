@@ -64,32 +64,32 @@ Where `<base-encoding-character>` is used according to the multibase table.
 The current multibase table is [here](multibase.csv):
 
 ```
-encoding, code,prefix (UTF-8), description,                                                  status, comments
-identity,          NUL, 0x00,  8-bit binary (encoder and decoder keeps data unmodified),     default,
-base2,             0,   0x30,  binary (01010101),                                            candidate
-base8,             7,   0x37,  octal,                                                        draft
-base10,            9,   0x39,  decimal,                                                      draft
-base16,            f,   0x66,  hexadecimal,                                                  default
-base16upper,       F,   0x46,  hexadecimal,                                                  default
-base32hex,         v,   0x76,  rfc4648 case-insensitive - no padding - highest char,         candidate
-base32hexupper,    V,   0x56,  rfc4648 case-insensitive - no padding - highest char,         candidate
-base32hexpad,      t,   0x74,  rfc4648 case-insensitive - with padding,                      candidate
-base32hexpadupper, T,   0x54,  rfc4648 case-insensitive - with padding,                      candidate
-base32,            b,   0x62,  rfc4648 case-insensitive - no padding,                        default
-base32upper,       B,   0x42,  rfc4648 case-insensitive - no padding,                        default
-base32pad,         c,   0x63,    rfc4648 case-insensitive - with padding,                      candidate
-base32padupper,    C,   0x43,    rfc4648 case-insensitive - with padding,                      candidate
-base32z,           h,   0x68,    z-base-32 (used by Tahoe-LAFS),                               draft
-base36,            k,   0x6b,    base36 [0-9a-z] case-insensitive - no padding,                draft
-base36upper,       K,   0x4b,    base36 [0-9a-z] case-insensitive - no padding,                draft
-base58btc,         z,   0x7a,    base58 bitcoin,                                               default
-base58flickr,      Z,   0x5a,    base58 flicker,                                               candidate
-base64,            m,   0x6d,    rfc4648 no padding,                                           default
-base64pad,         M,   0x4d,    rfc4648 with padding - MIME encoding,                         candidate
-base64url,         u,   0x75,    rfc4648 no padding,                                           default
-base64urlpad,      U,   0x55,    rfc4648 with padding,                                         default
-proquint,          p,   0x70,    PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
-base256emoji,      🚀 (Unicode U+1F680),  0xF09F9A80,    base256 with custom alphabet using variable-sized-codepoints, draft
+encoding,           code,           (UTF-8),        description,                                                  status, comments
+identity,          NUL,             0x00,           8-bit binary (encoder and decoder keeps data unmodified),     default,
+base2,             0,               0x30,           binary (01010101),                                            candidate
+base8,             7,               0x37,           octal,                                                        draft
+base10,            9,               0x39,           decimal,                                                      draft
+base16,            f,               0x66,           hexadecimal,                                                  default
+base16upper,       F,               0x46,           hexadecimal,                                                  default
+base32hex,         v,               0x76,           rfc4648 case-insensitive - no padding - highest char,         candidate
+base32hexupper,    V,               0x56,           rfc4648 case-insensitive - no padding - highest char,         candidate
+base32hexpad,      t,               0x74,           rfc4648 case-insensitive - with padding,                      candidate
+base32hexpadupper, T,               0x54,           rfc4648 case-insensitive - with padding,                      candidate
+base32,            b,               0x62,           rfc4648 case-insensitive - no padding,                        default
+base32upper,       B,               0x42,           rfc4648 case-insensitive - no padding,                        default
+base32pad,         c,               0x63,           rfc4648 case-insensitive - with padding,                      candidate
+base32padupper,    C,               0x43,           rfc4648 case-insensitive - with padding,                      candidate
+base32z,           h,               0x68,           z-base-32 (used by Tahoe-LAFS),                               draft
+base36,            k,               0x6b,           base36 [0-9a-z] case-insensitive - no padding,                draft
+base36upper,       K,               0x4b,           base36 [0-9a-z] case-insensitive - no padding,                draft
+base58btc,         z,               0x7a,           base58 bitcoin,                                               default
+base58flickr,      Z,               0x5a,           base58 flicker,                                               candidate
+base64,            m,               0x6d,           rfc4648 no padding,                                           default
+base64pad,         M,               0x4d,           rfc4648 with padding - MIME encoding,                         candidate
+base64url,         u,               0x75,           rfc4648 no padding,                                           default
+base64urlpad,      U,               0x55,           rfc4648 with padding,                                         default
+proquint,          p,               0x70,           PRO-QUINT https://arxiv.org/html/0901.4016,                   draft
+base256emoji,      🚀 (U+1F680),    0xF09F9A80,     base256 with custom alphabet using variable-sized-codepoints, draft
 ```
 
 **NOTE:** Multibase-prefixes are encoding agnostic, and conformance is tested by the prefix code in the string, not the binary prefix, however encoded. I.e., the code is the `z` codepoint (in BTC-alphabet base 58), not `0x7a` (the binary that becomes the `z` encoded in ASCII/UTF-8). Note that the same binary, in UTF-32, would be `[0x7a, 0x00, 0x00, 0x00]` to produce the same `z` with the base and alphabet.
