@@ -101,7 +101,7 @@ However, if the string in question came from a UTF-32 context, detecting and dro
 
 ## Reserved
 
-The following codes are _reserved_ for (backwards) compatibility with existing systems and cannot be registered in the `multibase` table. Note that all three Unicode entries here correspond to entries in the UTF-8-keyed [multiformats] registry group registered under their UTF-8 equivalents.
+The following codes are _reserved_ and cannot be registered in the `multibase` table. Note that all three Unicode entries, expressed as a UTF-8 byte, collide with entries in the UTF-8-keyed namespace of the [multiformats] registry group; this list of reserved Unicode codepoints may grow in the future to avoid such collisions as other single-byte UTF-8 codes are reserved there.
 
 * `/` (U+002F) - Separator used by [multiaddr].
 * `1` (U+0031) - Base58-encoded identity multihashes used by libp2p peer IDs.
