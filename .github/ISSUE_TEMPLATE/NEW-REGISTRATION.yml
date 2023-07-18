@@ -6,9 +6,9 @@ labels: [
 ]
 body:
   - type: input
-    id: name
+    id: encoding-name
     attributes:
-      label: "Name"
+      label: "Name of encoding"
       description: Name this library or system
       placeholder: acronyms and abbreviations are fine
     validations:
