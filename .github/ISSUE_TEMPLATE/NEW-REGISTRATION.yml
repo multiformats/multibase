@@ -31,16 +31,16 @@ body:
     id: codepoint
     attributes:
       label: "Proposed codepoint"
-      description: Please put here the prefix in the target encoding
-      placeholder: By tradition, the highest binary value in the alphabet works well and has a built-in mnemonic if it doesn't conflict with any other entries
+      description: Please put here the prefix in the target encoding. By tradition, the highest binary value in the encoding alphabet works well and has a built-in mnemonic if it doesn't conflict with any other entries
+      placeholder: x
     validations:
       required: true
   - type: input
     id: varint-value
     attributes:
       label: "Proposed varint value for registration in multiformats"
-      description: Please put here the UTF-8 value that corresponds to that target encoding, for inclusion in the multiformats table
-      placeholder: See the multibase spec for reserved values
+      description: Please put here the UTF-8 value that corresponds to that target encoding, for inclusion in the multiformats table, formatted as an [unsigned varint](https://github.com/multiformats/unsigned-varint)
+      placeholder: See mf/unsigned-varint
     validations:
       required: true
   - type: textarea

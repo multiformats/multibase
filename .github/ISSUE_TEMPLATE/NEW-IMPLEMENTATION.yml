@@ -10,7 +10,7 @@ body:
     attributes:
       label: "Name"
       description: Name this library or system
-      placeholder: [lang-]Multibase-[usecase], for example
+      placeholder: {language-}Multibase{-usecase}, for example
     validations:
       required: false
   - type: checkboxes
