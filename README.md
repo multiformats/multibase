@@ -95,29 +95,31 @@ p,      U+0070      0x70,       proquint,           [PRO-QUINT],                
 🚀,     U+1F680,    0xF09F9A80, base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   draft
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point], not an ASCII character or corresponding UTF-8 bytes.  Since UTF-8 is the most common context for binary data that gets prefixed as a multibase today, the UTF-8 column is provided as a reference for detecting multibase-prefixes, since most of these codes can be detected in the first byte. 
+**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point], not an ASCII character or corresponding UTF-8 bytes.  
+Since UTF-8 is the most common context for binary data that gets prefixed as a multibase today, the UTF-8 column is provided as a reference for detecting multibase-prefixes, since most of these codes can be detected in the first byte in known-encoding contexts. 
 
-However, if the string in question came from a UTF-32 context, detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` of that code to be detected and dropped.
+However, if the string in question came from a UTF-32 context, detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` codepoint for that entry, and the entire byte array would need to be detected and dropped.
 
 ## Reserved
 
-The following codes are _reserved_ and cannot be registered in the `multibase` table. Note that all three Unicode entries, expressed as a UTF-8 byte, collide with entries in the UTF-8-keyed namespace of the [multiformats] registry group; this list of reserved Unicode codepoints may grow in the future to avoid such collisions as other single-byte UTF-8 codes are reserved there.
+The following codes are _reserved_ and cannot be registered in the `multibase` table. Note that all three Unicode entries, expressed as the [unsigned varint] expression of that Unicode code-point in UTF-8, are reserved in the greater [multiformats registry group]; this list of reserved Unicode codepoints may grow in the future to avoid such collisions as other single-byte UTF-8 codes are reserved there.
+
 
 * `/` (U+002F) - Separator used by [multiaddr].
 * `1` (U+0031) - Base58-encoded identity multihashes used by libp2p peer IDs.
 * `Q` (U+0011) - Base58-encoded sha2-256 multihashes used by libp2p/ipfs for peer IDs and CIDv0.
 
-If you'd like to switch a project over to multibase and would also like to
-reserve a prefix for compatibility, please file an issue in this repository.
-
 ## Status
 
 Each multibase encoding has a status:
 
-* draft - these encodings have been proposed but are not widely implemented and may be removed.
-* candidate - these encodings are mature and widely implemented but may not be implemented by all implementations.
-* default - these encodings should be implemented by all implementations and are widely used.
-
+* reserved - for functional reasons or to avoid collisions with other multi-* registries, this registry cannot accept registrations at this code-point and implementing one unregistered is discouraged for interoperability reasons
+* experimental - these encodings have been proposed but are not widely implemented and may be removed.
+* draft - these encodings are mature and widely implemented but may not be
+  implemented by all implementations.
+* final - these encodings should be implemented by all implementations and are widely used.
+* deprecated - this entry will likely be removed and reassigned in the future and it will not likely become a `final` registration
+  
 ## Multibase By Example
 
 Consider the following encodings of the same binary string:
@@ -162,7 +164,10 @@ have yet not found a case needing something else.
 
 > Don't we have to agree on a table of base encodings?
 
-Yes, but we already have to agree on base encodings, so this is not hard. The table even leaves some room for custom encodings.
+Yes, but we already have to agree on base encodings, so this is not hard. The
+table even leaves some room for custom encodings and is intended to work both in
+contexts where the encodings are known or agreed on and open-world or brownfield
+contexts where these may vary.
 
 ## Implementations:
 
@@ -187,20 +192,36 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 
 ## Disclaimers
 
-Warning: **obviously multibase changes the first character depending on the encoding**. Do not expect the value to be exactly the same. Remove the multibase prefix before using the value.
+Warning: **obviously multibase changes the first character depending on the
+encoding**. Do not expect the value to be exactly the same. Remove the multibase
+prefix before using the value.
 
 ## Contribute
 
-Contributions welcome. Please check out [the issues](https://github.com/multiformats/multibase/issues).
+Contributions welcome. Please check out [the
+issues](https://github.com/multiformats/multibase/issues) and reading the
+[contributing
+document](https://github.com/multiformats/multiformats/blob/master/contributing.md)
+for the greater multiformats project before opening your first issue, as the
+workflow and the relation of multibase to the greater project both benefit from
+this context. more information on how we work, and about contributing in
+general.
 
-Check out our [contributing document](https://github.com/multiformats/multiformats/blob/master/contributing.md) for more information on how we work, and about contributing in general. Please be aware that all interactions related to multiformats are subject to the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
-
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+If you'd like to switch a project over to multibase, whether by creating a new
+multibase implementation or building on one of those listed above, please file
+an issue in this repository using the "Interested in implementing" issue
+template. If would also like to reserve a prefix for compatibility, please file
+a separate issue in this repository using the "New Registration" issue template.
 
 ## License
 
-This repository is only for documents. All of these are licensed under the [CC-BY-SA 3.0](https://ipfs.io/ipfs/QmVreNvKsQmQZ83T86cWSjPu2vR3yZHGPm5jnxFuunEB9u) license © 2016 Protocol Labs Inc. Any code is under a [MIT](LICENSE) © 2016 Protocol Labs Inc.
+This repository is only for documents. All of these are licensed under the
+[CC-BY-SA
+3.0](https://ipfs.io/ipfs/QmVreNvKsQmQZ83T86cWSjPu2vR3yZHGPm5jnxFuunEB9u)
+license © 2016 Protocol Labs Inc. Any code is under a [MIT](LICENSE) © 2016
+Protocol Labs Inc.
 
 [multiaddr]: https://github.com/multiformats/multiaddr
-[multiformats]: https://github.com/multiformats/multicodec/blob/master/table.csv
+[multiformats registry group]: https://github.com/multiformats/multicodec/blob/master/table.csv
+[unsigned varint]: https://github.com/multiformats/unsigned-varint
 [code point]: https://infra.spec.whatwg.org/#code-points
