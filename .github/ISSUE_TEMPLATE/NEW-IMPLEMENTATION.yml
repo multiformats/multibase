@@ -1,0 +1,55 @@
+name: "Interest in Implementing - New Multibase Library or System"
+description: Express interest in possible new multibase library or system
+title: "📚 [NEW PROJECT] - <title>"
+labels: [
+  "ideation"
+]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: "Name"
+      description: Name this library or system
+      placeholder: [lang-]Multibase-[usecase], for example
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Have read contributing"
+      description: I have read the [contributing](https://github.com/multiformats/multiformats/blob/master/contributing.md) document
+      options:
+      - label: I read it!
+    validations:
+      required: true
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: "Description of parsing, sniffing, or encoding problem solved"
+      description: Please describe the problem solved by a new multibase library or system depending on multibase codecs
+      placeholder: Feel free to provide links for context and use-case descriptions, and how this problem is not solved by existing multi-formats entries or mini-registries
+    validations:
+      required: true
+  - type: textarea
+    id: prior_art
+    attributes:
+      label: "Description of relevant prior art and status quo"
+      description: Please describe relevant prior art and how this is use-case functions today
+      placeholder: Links welcome
+    validations:
+      required: true
+  - type: textarea
+    id: solution_and_rationale
+    attributes:
+      label: "Proposed solution and rationale"
+      description: Please describe at a high level what you are exploring building and current open research questions
+      placeholder: Detail welcome
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: "Any further questions or requests"
+      description: Anything else you'd like to ask the maintainers or community?
+      placeholder: ok to leave blank!
+    validations:
+      required: false

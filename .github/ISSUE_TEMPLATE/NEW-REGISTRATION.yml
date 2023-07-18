@@ -1,0 +1,69 @@
+name: "New Registration"
+description: Express interest in registering a new encoding
+title: "📚 [NEW REGISTRATION] - <title>"
+labels: [
+  "Registration"
+]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: "Name"
+      description: Name this library or system
+      placeholder: acronyms and abbreviations are fine
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Have read contributing"
+      description: I have read the [contributing](https://github.com/multiformats/multiformats/blob/master/contributing.md) document
+      options:
+      - label: I read it!
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: "Have checked table"
+      description: I have reviewed the [multiformats mega-table](https://github.com/multiformats/multicodec/blob/master/table.csv) to assess viable sub-namespace for a registry if applicable
+      options:
+      - label: I read it!
+  - type: input
+    id: codepoint
+    attributes:
+      label: "Proposed codepoint"
+      description: Please put here the prefix in the target encoding
+      placeholder: By tradition, the highest binary value in the alphabet works well and has a built-in mnemonic if it doesn't conflict with any other entries
+    validations:
+      required: true
+  - type: input
+    id: varint-value
+    attributes:
+      label: "Proposed varint value for registration in multiformats"
+      description: Please put here the UTF-8 value that corresponds to that target encoding, for inclusion in the multiformats table
+      placeholder: See the multibase spec for reserved values
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: "use-case"
+      description: Please describe the possible use-cases where this additional codec would be helpful, where this encoding is used currently in the wild, etc.
+      placeholder: Feel free to provide links for context and use-case descriptions
+    validations:
+      required: true
+  - type: textarea
+    id: specification
+    attributes:
+      label: "Description of relevant prior art and status quo"
+      description: Please describe relevant prior art and, if already specified in a static public document, the algorithms and configurations needed to deterministically encode/decode
+      placeholder: Links welcome
+    validations:
+      required: true
+  - type: textarea
+    id: solution_and_rationale
+    attributes:
+      label: "Proposed solution and rationale"
+      description: Please describe at a high level what you are exploring building and current open research questions
+      placeholder: Detail welcome
+    validations:
+      required: true
