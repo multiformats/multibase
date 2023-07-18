@@ -6,9 +6,9 @@ labels: [
 ]
 body:
   - type: input
-    id: name
+    id: project-name
     attributes:
-      label: "Name"
+      label: "Name of Project"
       description: Name this library or system
       placeholder: {language-}Multibase{-usecase}, for example
     validations:
