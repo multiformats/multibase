@@ -93,6 +93,7 @@ u,      U+0075,     0x75,       base64url,          rfc4648 no padding,         
 U,      U+0055,     0x55,       base64urlpad,       rfc4648 with padding,                                           final
 p,      U+0070,     0x70,       proquint,           [PRO-QUINT],                                                    experimental
 🚀,     U+1F680,    0xF09F9A80, base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
+
 ```
 
 **NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point], not an ASCII character or corresponding UTF-8 bytes.  
