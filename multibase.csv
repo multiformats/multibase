@@ -1,5 +1,5 @@
 code,   Unicode,    (UTF-8),    encoding,           description,                                                    status
-NUL,    U+0000      0x00,       8-bit binary        (encoder and decoder keeps data unmodified),                    reserved,
+NUL,    U+0000      0x00,       8-bit binary        (encoder and decoder keeps data unmodified),                    reserved
 0,      U+0030      0x30,       base2,              binary (01010101),                                              experimental
 7,      U+0037      0x37        base8,              octal,                                                          draft
 9,      U+0039      0x39        base10,             decimal,                                                        draft
