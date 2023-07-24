@@ -7,34 +7,23 @@
 
 > Self-identifying base encodings
 
-Multibase is a protocol for disambiguating the "base encoding" used to express
-binary data in text formats (e.g., base32, base36, base64, base58, etc.) from the
-expression alone.
+Multibase is a protocol for disambiguating the "base encoding" used to express binary data in text formats (e.g., base32, base36, base64, base58, etc.) from the expression alone.
 
-When text is encoded as bytes, we can usually use a one-size-fits-all encoding
-(UTF-8) because we're always encoding to the same set of 256 bytes (+/- the NUL
-byte). When that doesn't work, usually for historical or performance reasons, we
-can usually infer the encoding from the context.
+When text is encoded as bytes, we can usually use a one-size-fits-all encoding (UTF-8) because we're always encoding to the same set of 256 bytes (+/- the NUL byte).
+When that doesn't work, usually for historical or performance reasons, we can usually infer the encoding from the context.
 
-However, when bytes are encoded as text (using a base encoding), the choice of
-base encoding (and alphabet, and other factors) is often restricted by the
-context. Worse, these restrictions can change based on where the data appears in
-the text. In some cases, we can only use `[a-z0-9]`. In others, we can use a
-larger set of characters but need a compact encoding. This has lead to a large
-set of "base encodings", almost one for every use-case. Unlike the case of
-encoding text to bytes, it is impractical to standardize widely around a single
-base encoding because there is no optimal encoding for all cases.
+However, when bytes are encoded as text (using a base encoding), the choice of base encoding (and alphabet, and other factors) is often restricted by the context.
+Worse, these restrictions can change based on where the data appears in the text. 
+In some cases, we can only use `[a-z0-9]`; in others, we can use a larger set of characters but need a compact encoding. 
+This has lead to a large set of "base encodings", almost one for every use-case.
+Unlike the case of encoding text to bytes, it is impractical to standardize widely around a single base encoding because there is no optimal encoding for all cases.
 
-As data travels beyond its context, it becomes quite hard to ascertain *which*
-base encoding of the many possible ones were used; that's where multibase comes
-in. Where the data has been prefixed before leaving its context behind, it
-answers the question:
+As data travels beyond its context, it becomes quite hard to ascertain *which* base encoding of the many possible ones were used; that's where multibase comes in. 
+Where the data has been prefixed before leaving its context behind, it answers the question:
 
 > Given binary data `d` encoded into text `s`, what base `b` was used to encode it?
 
-To answer this question, a single code point is prepended to `s` at time of
-encoding, which signals in that new context which `b` can be used to reconstruct
-`d`.
+To answer this question, a single code point is prepended to `s` at time of encoding, which signals in that new context which `b` can be used to reconstruct `d`.
 
 ## Table of Contents
 
@@ -59,8 +48,7 @@ The Format is:
 <base-encoding-code-point><base-encoded-data>
 ```
 
-Where `<base-encoding-code-point>` is a code representing an entry in the
-multibase table.
+Where `<base-encoding-code-point>` is a code representing an entry in the multibase table.
 
 ### Multibase Table
 
@@ -116,8 +104,7 @@ Each multibase encoding has a status:
 
 * reserved - for functional reasons or to avoid collisions with other multi-* registries, this registry cannot accept registrations at this code-point and implementing one unregistered is discouraged for interoperability reasons
 * experimental - these encodings have been proposed but are not widely implemented and may be removed.
-* draft - these encodings are mature and widely implemented but may not be
-  implemented by all implementations.
+* draft - these encodings are mature and widely implemented but may not be implemented by all implementations.
 * final - these encodings should be implemented by all implementations and are widely used.
 * deprecated - this entry will likely be removed and reassigned in the future and it will not likely become a `final` registration
   
@@ -157,18 +144,15 @@ Yes. If i give you `"1214314321432165"` is that decimal? or hex? or something el
 
 > Why the strange selection of codes / characters?
 
-The code values are selected such that they are included in the alphabets of the
-base they represent. For example, `f` is the base code for `base16 (hex)`,
-because `f` is in hex's 16 character alphabet. Note that most of the alphabets
-used can be encoded in UTF-8, and most but not all can be encoded in ASCII. We
-have yet not found a case needing something else.
+The code values are selected such that they are included in the alphabets of the base they represent. 
+For example, `f` is the base code for `base16 (hex)`, because `f` is in hex's 16 character alphabet.
+Note that most of the alphabets used can be encoded in UTF-8, and most but not all can be encoded in ASCII.
+We have yet not found a case needing something else.
 
 > Don't we have to agree on a table of base encodings?
 
-Yes, but we already have to agree on base encodings, so this is not hard. The
-table even leaves some room for custom encodings and is intended to work both in
-contexts where the encodings are known or agreed on and open-world or brownfield
-contexts where these may vary.
+Yes, but we already have to agree on base encodings, so this is not hard.
+The table even leaves some room for custom encodings and is intended to work both in contexts where the encodings are known or agreed on and open-world or brownfield contexts where these may vary.
 
 ## Implementations:
 
@@ -193,34 +177,24 @@ contexts where these may vary.
 
 ## Disclaimers
 
-Warning: **obviously multibase changes the first character depending on the
-encoding**. Do not expect the value to be exactly the same. Remove the multibase
-prefix before using the value.
+Warning: **obviously multibase changes the first character depending on the encoding**. 
+Do not expect the value to be exactly the same. 
+Remove the multibase prefix before using the value.
 
 ## Contribute
 
-Contributions welcome. Please check out [the
-issues](https://github.com/multiformats/multibase/issues) and reading the
-[contributing
-document](https://github.com/multiformats/multiformats/blob/master/contributing.md)
-for the greater multiformats project before opening your first issue, as the
-workflow and the relation of multibase to the greater project both benefit from
-this context. more information on how we work, and about contributing in
-general.
+Contributions welcome. 
+Please check out [the issues](https://github.com/multiformats/multibase/issues) and reading the [contributing document](https://github.com/multiformats/multiformats/blob/master/contributing.md) for the greater multiformats project before opening your first issue, as the workflow and the relation of multibase to the greater project both benefit from this context.
+more information on how we work, and about contributing in general.
 
-If you'd like to switch a project over to multibase, whether by creating a new
-multibase implementation or building on one of those listed above, please file
-an issue in this repository using the "Interested in implementing" issue
-template. If would also like to reserve a prefix for compatibility, please file
-a separate issue in this repository using the "New Registration" issue template.
+If you'd like to switch a project over to multibase, whether by creating a new multibase implementation or building on one of those listed above, please file an issue in this repository using the "Interested in implementing" issue template.
+If would also like to reserve a prefix for compatibility, please file a separate issue in this repository using the "New Registration" issue template.
 
 ## License
 
-This repository is only for documents. All of these are licensed under the
-[CC-BY-SA
-3.0](https://ipfs.io/ipfs/QmVreNvKsQmQZ83T86cWSjPu2vR3yZHGPm5jnxFuunEB9u)
-license © 2016 Protocol Labs Inc. Any code is under a [MIT](LICENSE) © 2016
-Protocol Labs Inc.
+This repository is only for documents. 
+All of these are licensed under the [CC-BY-SA 3.0](https://ipfs.io/ipfs/QmVreNvKsQmQZ83T86cWSjPu2vR3yZHGPm5jnxFuunEB9u) license © 2016 Protocol Labs Inc.
+Any code is under a [MIT](LICENSE) © 2016 Protocol Labs Inc.
 
 [multiaddr]: https://github.com/multiformats/multiaddr
 [multiformats registry group]: https://github.com/multiformats/multicodec/blob/master/table.csv
