@@ -150,7 +150,6 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 ## Implementations:
 
 - [go-multibase](https://github.com/multiformats/go-multibase)
-- [kotlin-multibase](https://github.com/changjiashuai/kotlin-multibase)
 - [js-multibase](https://github.com/multiformats/js-multibase)
 - [cs-multibase](https://github.com/tabrath/cs-multibase)
 - [rust-multibase](https://github.com/multiformats/rust-multibase)
@@ -165,7 +164,9 @@ Yes, but we already have to agree on base encodings, so this is not hard. The ta
 - [dart-multibase](https://github.com/heacare/dart-multibase)
 - [yoclib-multibase-php](https://github.com/yocto/yoclib-multibase-php)
 - `multibase` sub-module of Python module [multiformats](https://github.com/hashberg-io/multiformats)
-- `multibase` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
+- Kotlin
+  - [kotlin-multibase](https://github.com/changjiashuai/kotlin-multibase)
+  - `multibase` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
 - [Add yours here!](https://github.com/multiformats/multibase/edit/master/README.md)
 
 
