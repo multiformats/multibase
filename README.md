@@ -28,7 +28,6 @@ To answer this question, a single code point is prepended to `s` at time of enco
 ## Table of Contents
 
 - [multibase](#multibase)
-  - [Table of Contents](#table-of-contents)
   - [Format](#format)
     - [Multibase Table](#multibase-table)
   - [Reserved](#reserved)
@@ -55,32 +54,32 @@ Where `<base-encoding-code-point>` is a code representing an entry in the multib
 The current multibase table is [here](multibase.csv):
 
 ```
-code,   Unicode,    (UTF-8),    encoding,           description,                                                    status
-NUL,    U+0000,     0x00,       8-bit binary,       (encoder and decoder keeps data unmodified),                    reserved
-0,      U+0030,     0x30,       base2,              binary (01010101),                                              experimental
-7,      U+0037,     0x37,       base8,              octal,                                                          draft
-9,      U+0039,     0x39,       base10,             decimal,                                                        draft
-f,      U+0066,     0x66,       base16,             hexadecimal,                                                    final
-F,      U+0006,     0x06,       base16upper,        hexadecimal,                                                    final
-v,      U+0076,     0x76,       base32hex,          rfc4648 case-insensitive - no padding - highest char,           experimental
-V,      U+0056,     0x56,       base32hexupper,     rfc4648 case-insensitive - no padding - highest char,           experimental
-t,      U+0074,     0x74,       base32hexpad,       rfc4648 case-insensitive - with padding,                        experimental
-T,      U+0054,     0x54,       base32hexpadupper,  rfc4648 case-insensitive - with padding,                        experimental
-b,      U+0062,     0x62,       base32,             rfc4648 case-insensitive - no padding,                          final
-B,      U+0042,     0x42,       base32upper,        rfc4648 case-insensitive - no padding,                          final
-c,      U+0063,     0x63,       base32pad,          rfc4648 case-insensitive - with padding,                        draft
-C,      U+0043,     0x43,       base32padupper,     rfc4648 case-insensitive - with padding,                        draft
-h,      U+0068,     0x68,       base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
-k,      U+006b,     0x6b,       base36,             base36 [0-9a-z] case-insensitive - no padding,                  draft
-K,      U+004b,     0x4b,       base36upper,        base36 [0-9a-z] case-insensitive - no padding,                  draft
-z,      U+007a,     0x7a,       base58btc,          base58 bitcoin,                                                 final
-Z,      U+005a,     0x5a,       base58flickr,       base58 flicker,                                                 experimental
-m,      U+006d,     0x6d,       base64,             rfc4648 no padding,                                             final
-M,      U+004d,     0x4d,       base64pad,          rfc4648 with padding - MIME encoding,                           experimental
-u,      U+0075,     0x75,       base64url,          rfc4648 no padding,                                             final
-U,      U+0055,     0x55,       base64urlpad,       rfc4648 with padding,                                           final
-p,      U+0070,     0x70,       proquint,           [PRO-QUINT],                                                    experimental
-🚀,     U+1F680,    0xF09F9A80, base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
+code,   Unicode,    encoding,           description,                                                    status
+NUL,    U+0000,     none,               (no base encoding),                                             reserved
+0,      U+0030,     base2,              binary (01010101),                                              experimental
+7,      U+0037,     base8,              octal,                                                          draft
+9,      U+0039,     base10,             decimal,                                                        draft
+f,      U+0066,     base16,             hexadecimal,                                                    final
+F,      U+0006,     base16upper,        hexadecimal,                                                    final
+v,      U+0076,     base32hex,          rfc4648 case-insensitive - no padding - highest char,           experimental
+V,      U+0056,     base32hexupper,     rfc4648 case-insensitive - no padding - highest char,           experimental
+t,      U+0074,     base32hexpad,       rfc4648 case-insensitive - with padding,                        experimental
+T,      U+0054,     base32hexpadupper,  rfc4648 case-insensitive - with padding,                        experimental
+b,      U+0062,     base32,             rfc4648 case-insensitive - no padding,                          final
+B,      U+0042,     base32upper,        rfc4648 case-insensitive - no padding,                          final
+c,      U+0063,     base32pad,          rfc4648 case-insensitive - with padding,                        draft
+C,      U+0043,     base32padupper,     rfc4648 case-insensitive - with padding,                        draft
+h,      U+0068,     base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
+k,      U+006b,     base36,             base36 [0-9a-z] case-insensitive - no padding,                  draft
+K,      U+004b,     base36upper,        base36 [0-9a-z] case-insensitive - no padding,                  draft
+z,      U+007a,     base58btc,          base58 bitcoin,                                                 final
+Z,      U+005a,     base58flickr,       base58 flicker,                                                 experimental
+m,      U+006d,     base64,             rfc4648 no padding,                                             final
+M,      U+004d,     base64pad,          rfc4648 with padding - MIME encoding,                           experimental
+u,      U+0075,     base64url,          rfc4648 no padding,                                             final
+U,      U+0055,     base64urlpad,       rfc4648 with padding,                                           final
+p,      U+0070,     proquint,           [PRO-QUINT],                                                    experimental
+🚀,     U+1F680,    base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
 
 ```
 
