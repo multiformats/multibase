@@ -83,8 +83,8 @@ U+1F680,  🚀,       base256emoji,       base256 with custom alphabet using var
 
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point], not the raw bytes. 
-The each character code point displays as in that encoding is provided for convenience, since most of these codes can be detected in the first byte in known-encoding contexts. 
+**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point][], not the raw bytes. 
+The character that each code point displays as in that encoding is provided for convenience. 
 
 However, if the string in question came from a UTF-32 context, detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` codepoint for that entry, and the entire byte array would need to be detected and dropped.
 
