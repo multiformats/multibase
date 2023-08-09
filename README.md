@@ -54,37 +54,37 @@ Where `<base-encoding-code-point>` is a code representing an entry in the multib
 The current multibase table is [here](multibase.csv):
 
 ```
-code,   Unicode,    encoding,           description,                                                    status
-NUL,    U+0000,     none,               (no base encoding),                                             reserved
-0,      U+0030,     base2,              binary (01010101),                                              experimental
-7,      U+0037,     base8,              octal,                                                          draft
-9,      U+0039,     base10,             decimal,                                                        draft
-f,      U+0066,     base16,             hexadecimal,                                                    final
-F,      U+0006,     base16upper,        hexadecimal,                                                    final
-v,      U+0076,     base32hex,          rfc4648 case-insensitive - no padding - highest char,           experimental
-V,      U+0056,     base32hexupper,     rfc4648 case-insensitive - no padding - highest char,           experimental
-t,      U+0074,     base32hexpad,       rfc4648 case-insensitive - with padding,                        experimental
-T,      U+0054,     base32hexpadupper,  rfc4648 case-insensitive - with padding,                        experimental
-b,      U+0062,     base32,             rfc4648 case-insensitive - no padding,                          final
-B,      U+0042,     base32upper,        rfc4648 case-insensitive - no padding,                          final
-c,      U+0063,     base32pad,          rfc4648 case-insensitive - with padding,                        draft
-C,      U+0043,     base32padupper,     rfc4648 case-insensitive - with padding,                        draft
-h,      U+0068,     base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
-k,      U+006b,     base36,             base36 [0-9a-z] case-insensitive - no padding,                  draft
-K,      U+004b,     base36upper,        base36 [0-9a-z] case-insensitive - no padding,                  draft
-z,      U+007a,     base58btc,          base58 bitcoin,                                                 final
-Z,      U+005a,     base58flickr,       base58 flicker,                                                 experimental
-m,      U+006d,     base64,             rfc4648 no padding,                                             final
-M,      U+004d,     base64pad,          rfc4648 with padding - MIME encoding,                           experimental
-u,      U+0075,     base64url,          rfc4648 no padding,                                             final
-U,      U+0055,     base64urlpad,       rfc4648 with padding,                                           final
-p,      U+0070,     proquint,           [PRO-QUINT],                                                    experimental
-🚀,     U+1F680,    base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
+Unicode,  Character,encoding,           description,                                                    status
+U+0000,   NUL,      none,               (no base encoding),                                             reserved
+U+0030,   0,        base2,              binary (01010101),                                              experimental
+U+0037,   7,        base8,              octal,                                                          draft
+U+0039,   9,        base10,             decimal,                                                        draft
+U+0066,   f,        base16,             hexadecimal,                                                    final
+U+0006,   F,        base16upper,        hexadecimal,                                                    final
+U+0076,   v,        base32hex,          rfc4648 case-insensitive - no padding - highest char,           experimental
+U+0056,   V,        base32hexupper,     rfc4648 case-insensitive - no padding - highest char,           experimental
+U+0074,   t,        base32hexpad,       rfc4648 case-insensitive - with padding,                        experimental
+U+0054,   T,        base32hexpadupper,  rfc4648 case-insensitive - with padding,                        experimental
+U+0062,   b,        base32,             rfc4648 case-insensitive - no padding,                          final
+U+0042,   B,        base32upper,        rfc4648 case-insensitive - no padding,                          final
+U+0063,   c,        base32pad,          rfc4648 case-insensitive - with padding,                        draft
+U+0043,   C,        base32padupper,     rfc4648 case-insensitive - with padding,                        draft
+U+0068,   h,        base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
+U+006b,   k,        base36,             base36 [0-9a-z] case-insensitive - no padding,                  draft
+U+004b,   K,        base36upper,        base36 [0-9a-z] case-insensitive - no padding,                  draft
+U+007a,   z,        base58btc,          base58 bitcoin,                                                 final
+U+005a,   Z,        base58flickr,       base58 flicker,                                                 experimental
+U+006d,   m,        base64,             rfc4648 no padding,                                             final
+U+004d,   M,        base64pad,          rfc4648 with padding - MIME encoding,                           experimental
+U+0075,   u,        base64url,          rfc4648 no padding,                                             final
+U+0055,   U,        base64urlpad,       rfc4648 with padding,                                           final
+U+0070,   p,        proquint,           [PRO-QUINT],                                                    experimental
+U+1F680,  🚀,       base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
 
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point], not an ASCII character or corresponding UTF-8 bytes.  
-Since UTF-8 is the most common context for binary data that gets prefixed as a multibase today, the UTF-8 column is provided as a reference for detecting multibase-prefixes, since most of these codes can be detected in the first byte in known-encoding contexts. 
+**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point], not the raw bytes. 
+The each character code point displays as in that encoding is provided for convenience, since most of these codes can be detected in the first byte in known-encoding contexts. 
 
 However, if the string in question came from a UTF-32 context, detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` codepoint for that entry, and the entire byte array would need to be detected and dropped.
 
