@@ -1,4 +1,4 @@
-# multibase
+# Multibase
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](https://github.com/multiformats/multiformats)
@@ -84,8 +84,23 @@ U+002F,     /,          none,               (no base encoding)                  
 U+1F680,    🚀,         base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic and their canonical form is a Unicode [code point][], not the raw bytes. 
-The character that each code point displays as in that encoding is provided for convenience. 
+**NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`. Also note the difference between `0x00` (codepoint 0 or 0x00) and `0` (codepoint 48 or 0x30).
+
+## Specifications
+
+Below is a list of specs for the underlying base encodings:
+
+- `base2` [Base2 RFC](rfcs/Base2.md)
+- `base8` [Base8 RFC](rfcs/Base8.md), similar to [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base10` [Base10 RFC](rfcs/Base10.md)
+- `base36` [Base36 RFC](rfcs/Base36.md)
+- `base16*` [RFC4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base32*` (Except for `base32z`) [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base32z` [Human-oriented base32 spec](https://philzimmermann.com/docs/human-oriented-base-32-encoding.txt)
+- `base64*` [RFC4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
+- `base58btc` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02
+- `base58flickr` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02, but using a different alphabet
+- `proquint` [Proquint RFC](rfcs/Proquint.md), which is the [original spec](https://arxiv.org/html/0901.4016) with an added prefix for legibility
 
 However, if the string in question came from a UTF-32 context, detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` codepoint for that entry, and the entire byte array would need to be detected and dropped.
 
@@ -157,7 +172,6 @@ The table even leaves some room for custom encodings and is intended to work bot
 ## Implementations:
 
 - [go-multibase](https://github.com/multiformats/go-multibase)
-- [kotlin-multibase](https://github.com/changjiashuai/kotlin-multibase)
 - [js-multibase](https://github.com/multiformats/js-multibase)
 - [cs-multibase](https://github.com/tabrath/cs-multibase)
 - [rust-multibase](https://github.com/multiformats/rust-multibase)
@@ -172,6 +186,9 @@ The table even leaves some room for custom encodings and is intended to work bot
 - [dart-multibase](https://github.com/heacare/dart-multibase)
 - [yoclib-multibase-php](https://github.com/yocto/yoclib-multibase-php)
 - `multibase` sub-module of Python module [multiformats](https://github.com/hashberg-io/multiformats)
+- Kotlin
+  - [kotlin-multibase](https://github.com/changjiashuai/kotlin-multibase)
+  - `multibase` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
 - [Add yours here!](https://github.com/multiformats/multibase/edit/master/README.md)
 
 
