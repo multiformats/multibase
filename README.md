@@ -55,31 +55,31 @@ The current multibase table is [here](multibase.csv):
 
 ```
 Unicode,    character,  encoding,           description,                                                    status
-U+0000,     identity,   none,               (no base encoding),                                             reserved
-U+0030,     0,          base2,              binary (01010101),                                              experimental
-U+0031,     1,          none,               (no base encoding)                                              reserved
-U+0037,     7,          base8,              octal,                                                          draft
-U+0039,     9,          base10,             decimal,                                                        draft
-U+0066,     f,          base16,             hexadecimal,                                                    final
-U+0006,     F,          base16upper,        hexadecimal,                                                    final
-U+0076,     v,          base32hex,          rfc4648 case-insensitive - no padding - highest char,           experimental
-U+0056,     V,          base32hexupper,     rfc4648 case-insensitive - no padding - highest char,           experimental
-U+0074,     t,          base32hexpad,       rfc4648 case-insensitive - with padding,                        experimental
-U+0054,     T,          base32hexpadupper,  rfc4648 case-insensitive - with padding,                        experimental
-U+0062,     b,          base32,             rfc4648 case-insensitive - no padding,                          final
-U+0042,     B,          base32upper,        rfc4648 case-insensitive - no padding,                          final
-U+0063,     c,          base32pad,          rfc4648 case-insensitive - with padding,                        draft
-U+0043,     C,          base32padupper,     rfc4648 case-insensitive - with padding,                        draft
+U+0000,     NUL,        none,               (No base encoding),                                             reserved
+U+0030,     0,          base2,              Binary (01010101),                                              experimental
+U+0031,     1,          none,               (No base encoding)                                              reserved
+U+0037,     7,          base8,              Octal,                                                          draft
+U+0039,     9,          base10,             Decimal,                                                        draft
+U+0066,     f,          base16,             Hexadecimal (lowercase),                                        final
+U+0006,     F,          base16upper,        Hexadecimal (uppercase),                                        final
+U+0076,     v,          base32hex,          RFC4648 case-insensitive - no padding - highest char,           experimental
+U+0056,     V,          base32hexupper,     RFC4648 case-insensitive - no padding - highest char,           experimental
+U+0074,     t,          base32hexpad,       RFC4648 case-insensitive - with padding,                        experimental
+U+0054,     T,          base32hexpadupper,  RFC4648 case-insensitive - with padding,                        experimental
+U+0062,     b,          base32,             RFC4648 case-insensitive - no padding,                          final
+U+0042,     B,          base32upper,        RFC4648 case-insensitive - no padding,                          final
+U+0063,     c,          base32pad,          RFC4648 case-insensitive - with padding,                        draft
+U+0043,     C,          base32padupper,     RFC4648 case-insensitive - with padding,                        draft
 U+0068,     h,          base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
-U+006b,     k,          base36,             base36 [0-9a-z] case-insensitive - no padding,                  draft
-U+004b,     K,          base36upper,        base36 [0-9a-z] case-insensitive - no padding,                  draft
-U+007a,     z,          base58btc,          base58 bitcoin,                                                 final
-U+005a,     Z,          base58flickr,       base58 flicker,                                                 experimental
-U+006d,     m,          base64,             rfc4648 no padding,                                             final
-U+004d,     M,          base64pad,          rfc4648 with padding - MIME encoding,                           experimental
-U+0075,     u,          base64url,          rfc4648 no padding,                                             final
-U+0055,     U,          base64urlpad,       rfc4648 with padding,                                           final
-U+0070,     p,          proquint,           [PRO-QUINT],                                                    experimental
+U+006b,     k,          base36,             Base36 [0-9a-z] case-insensitive - no padding,                  draft
+U+004b,     K,          base36upper,        Base36 [0-9a-z] case-insensitive - no padding,                  draft
+U+007a,     z,          base58btc,          Base58 Bitcoin,                                                 final
+U+005a,     Z,          base58flickr,       Base58 Flicker,                                                 experimental
+U+006d,     m,          base64,             RFC4648 no padding,                                             final
+U+004d,     M,          base64pad,          RFC4648 with padding - MIME encoding,                           experimental
+U+0075,     u,          base64url,          RFC4648 no padding,                                             final
+U+0055,     U,          base64urlpad,       RFC4648 with padding,                                           final
+U+0070,     p,          proquint,           Proquint (https://arxiv.org/html/0901.4016),                    experimental
 U+002F,     Q,          none,               (no base encoding)                                              reserved
 U+002F,     /,          none,               (no base encoding)                                              reserved
 U+1F680,    🚀,         base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
