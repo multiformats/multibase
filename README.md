@@ -29,6 +29,7 @@ To answer this question, a single code point is prepended to `s` at time of enco
 
 - [Format](#format)
   - [Multibase Table](#multibase-table)
+- [Specifications](#specifications)
 - [Status](#status)
   - [Reserved Terms](#reserved-terms)
 - [Multibase By Example](#multibase-by-example)
@@ -84,7 +85,7 @@ U+002F,     /,          none,               (no base encoding)                  
 U+1F680,    🚀,         base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
 ```
 
-**NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). For example, in UTF-32, "z" would be `[0x7a, 0x00, 0x00, 0x00]`. Also note the difference between `0x00` (codepoint 0 or 0x00) and `0` (codepoint 48 or 0x30).
+**NOTE:** Multibase-prefixes are encoding agnostic. "z" is "z", not 0x7a ("z" encoded as ASCII/UTF-8). In UTF-32, for example, that same "z" would be `[0x7a, 0x00, 0x00, 0x00]` not ``[0x7a]`, so detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` codepoint for that entry, and the entire byte array would need to be detected and dropped. Also note the difference between `0x00` (codepoint 0 or 0x00) and `0` (codepoint 48 or 0x30).
 
 ## Specifications
 
@@ -102,7 +103,7 @@ Below is a list of specs for the underlying base encodings:
 - `base58flickr` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02, but using a different alphabet
 - `proquint` [Proquint RFC](rfcs/Proquint.md), which is the [original spec](https://arxiv.org/html/0901.4016) with an added prefix for legibility
 
-However, if the string in question came from a UTF-32 context, detecting and dropping an initial byte of `0x7a` would not suffice to confirm the rest was `base58btc`-encoded bytes; `[0x7a, 0x00, 0x00, 0x00]` would instead be the UTF-32 bytes that correspond to the `z` codepoint for that entry, and the entire byte array would need to be detected and dropped.
+
 
 ## Status
 
