@@ -1,6 +1,7 @@
 code,       Unicode,    encoding,           description,                                                    status
 identity,   U+0000,     none,               (no base encoding),                                             reserved
 0,          U+0030,     base2,              binary (01010101),                                              experimental
+1,          U+0031,     none,               (no base encoding)                                              reserved
 7,          U+0037,     base8,              octal,                                                          draft
 9,          U+0039,     base10,             decimal,                                                        draft
 f,          U+0066,     base16,             hexadecimal,                                                    final
@@ -23,4 +24,6 @@ M,          U+004d,     base64pad,          rfc4648 with padding - MIME encoding
 u,          U+0075,     base64url,          rfc4648 no padding,                                             final
 U,          U+0055,     base64urlpad,       rfc4648 with padding,                                           final
 p,          U+0070,     proquint,           [PRO-QUINT],                                                    experimental
+Q,          U+002F,     none,               (no base encoding)                                              reserved
+/,          U+002F,     none,               (no base encoding)                                              reserved
 🚀,         U+1F680,    base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
