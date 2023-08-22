@@ -28,4 +28,4 @@ body:
       description: Please provide additional context
       placeholder: "Context or external links needed to explain the possible mistake"       
     validations:
-      required: true
+      required: false
