@@ -27,6 +27,12 @@ body:
       description: I have reviewed the [multiformats mega-table](https://github.com/multiformats/multicodec/blob/master/table.csv) to assess viable sub-namespace for a registry if applicable
       options:
       - label: I read it!
+  - type: checkboxes
+    attributes:
+      label: "Willing to open a PR"
+      description: Once my questions are answered and my plan is confirmed, I will open a PR myself that adds the registration and be its change controller, or close this issue myself if I cannot
+      options:
+      - label: I will own this registration
   - type: input
     id: codepoint
     attributes:
@@ -63,7 +69,7 @@ body:
     id: solution_and_rationale
     attributes:
       label: "Proposed solution and rationale"
-      description: Please describe at a high level what you are exploring building and current open research questions
+      description: Please describe at a high level what you are exploring building and current open research questions. 
       placeholder: Detail welcome
     validations:
       required: true
