@@ -3,3 +3,6 @@ contact_links:
   - name: Protocol Labs Vulnerability Disclosure Team
     url: mailto:security@ipfs.io
     about: Please do NOT open issues related to security of implementations or spec here without contacting the IPFS security team first.
+  - name: Multiformats Repo Discussions
+    url: https://github.com/multiformats/multiformats/discussions
+    about: If you'd like to discuss an implementation of multibase you're working on, please use the discussions section on the core multiformats repo instead of this one.
