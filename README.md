@@ -61,7 +61,7 @@ U+0031,     1,          none,               (No base encoding)                  
 U+0037,     7,          base8,              Octal,                                                          draft
 U+0039,     9,          base10,             Decimal,                                                        draft
 U+0066,     f,          base16,             Hexadecimal (lowercase),                                        final
-U+0006,     F,          base16upper,        Hexadecimal (uppercase),                                        final
+U+0046,     F,          base16upper,        Hexadecimal (uppercase),                                        final
 U+0076,     v,          base32hex,          RFC4648 case-insensitive - no padding - highest char,           experimental
 U+0056,     V,          base32hexupper,     RFC4648 case-insensitive - no padding - highest char,           experimental
 U+0074,     t,          base32hexpad,       RFC4648 case-insensitive - with padding,                        experimental
@@ -80,7 +80,7 @@ U+004d,     M,          base64pad,          RFC4648 with padding - MIME encoding
 U+0075,     u,          base64url,          RFC4648 no padding,                                             final
 U+0055,     U,          base64urlpad,       RFC4648 with padding,                                           final
 U+0070,     p,          proquint,           Proquint (https://arxiv.org/html/0901.4016),                    experimental
-U+002F,     Q,          none,               (no base encoding)                                              reserved
+U+0051,     Q,          none,               (no base encoding)                                              reserved
 U+002F,     /,          none,               (no base encoding)                                              reserved
 U+1F680,    🚀,         base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
 ```
@@ -122,7 +122,7 @@ The following codes are _reserved_ and cannot be registered in the `multibase` t
 * `NUL` (n/a) - Legacy data may be found with null-byte-prefixed binary structures mixed in among multibase-encoded ones in arrays of data, although support for this is no longer mandated by conformant implementations.
 * `/` (U+002F) - Separator used by [multiaddr].
 * `1` (U+0031) - Base58-encoded identity multihashes used by libp2p peer IDs.
-* `Q` (U+0011) - Base58-encoded sha2-256 multihashes used by libp2p/ipfs for peer IDs and CIDv0.
+* `Q` (U+0051) - Base58-encoded sha2-256 multihashes used by libp2p/ipfs for peer IDs and CIDv0.
 
 ## Multibase By Example
 
