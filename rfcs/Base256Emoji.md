@@ -1,23 +1,23 @@
 # Base256Emoji
 
-This base is a benchmark / test / torture for implementations that wants
-to support unicode.
+This base is a benchmark / test / torture for implementations that want
+to support Unicode.
 
 ## Encoding
 
 Since both buffers and base256 items have 256 permutations per item the
-encoding is trivial, there is a one to one correspondance between one UTF-32
+encoding is trivial, there is a one to one correspondence between one UTF-32
 character and one byte value and you don't need to deal with any overflow or
 padding.
 
-First allocate a an UTF-32 output string with a codepoint length of your input
+First, allocate a UTF-32 output string with a codepoint length of your input
 buffer.
 
-Then for each index lookup in the correspondance table using the current byte
-value as index and write the codepoint you found to your output buffer at the
+Then, for each index lookup in the correspondence table using the current byte
+value as an index and write the codepoint you found to your output buffer at the
 same index.
 
-You can find out the correspondance using this table:
+You can find out the correspondence using this table:
 
 | Emoji | Unicode codepoint | Byte Value |
 |:-:|:-:|:-:|
@@ -282,5 +282,5 @@ You can find out the correspondance using this table:
 
 It is the same as encoding but the other way around.
 
-Note it is not recomanded to use a 8 gigabytes `UTF-32 codepoint` ->
+Note it is not recommended to use a 8 gigabytes `UTF-32 codepoint` ->
 `struct {bool, byte}`, it might be wise to a hash map instead.
