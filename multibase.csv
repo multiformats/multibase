@@ -1,7 +1,7 @@
 Unicode,    character,  encoding,           description,                                                    status
 U+0000,     NUL,        none,               (No base encoding),                                             reserved
 U+0030,     0,          base2,              Binary (01010101),                                              experimental
-U+0031,     1,          none,               (No base encoding)                                              reserved
+U+0031,     1,          none,               (No base encoding),                                             reserved
 U+0037,     7,          base8,              Octal,                                                          draft
 U+0039,     9,          base10,             Decimal,                                                        draft
 U+0066,     f,          base16,             Hexadecimal (lowercase),                                        final
@@ -24,6 +24,6 @@ U+004d,     M,          base64pad,          RFC4648 with padding - MIME encoding
 U+0075,     u,          base64url,          RFC4648 no padding,                                             final
 U+0055,     U,          base64urlpad,       RFC4648 with padding,                                           final
 U+0070,     p,          proquint,           Proquint (https://arxiv.org/html/0901.4016),                    experimental
-U+0051,     Q,          none,               (no base encoding)                                              reserved
-U+002F,     /,          none,               (no base encoding)                                              reserved
+U+0051,     Q,          none,               (no base encoding),                                             reserved
+U+002F,     /,          none,               (no base encoding),                                             reserved
 U+1F680,    🚀,         base256emoji,       base256 with custom alphabet using variable-sized-codepoints,   experimental
