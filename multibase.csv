@@ -17,6 +17,7 @@ U+0043,     C,          base32padupper,     RFC4648 case-insensitive - with padd
 U+0068,     h,          base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
 U+006b,     k,          base36,             Base36 [0-9a-z] case-insensitive - no padding,                  draft
 U+004b,     K,          base36upper,        Base36 [0-9a-z] case-insensitive - no padding,                  draft
+U+0071,     q,          base45,             Base45 RFC9285                                                  draft
 U+007a,     z,          base58btc,          Base58 Bitcoin,                                                 final
 U+005a,     Z,          base58flickr,       Base58 Flicker,                                                 experimental
 U+006d,     m,          base64,             RFC4648 no padding,                                             final
