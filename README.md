@@ -73,6 +73,7 @@ U+0043,     C,          base32padupper,     RFC4648 case-insensitive - with padd
 U+0068,     h,          base32z,            z-base-32 (used by Tahoe-LAFS),                                 draft
 U+006b,     k,          base36,             Base36 [0-9a-z] case-insensitive - no padding,                  draft
 U+004b,     K,          base36upper,        Base36 [0-9a-z] case-insensitive - no padding,                  draft
+U+0052,     R,          base45,             Base45 RFC9285,                                                 draft
 U+007a,     z,          base58btc,          Base58 Bitcoin,                                                 final
 U+005a,     Z,          base58flickr,       Base58 Flicker,                                                 experimental
 U+006d,     m,          base64,             RFC4648 no padding,                                             final
@@ -98,6 +99,7 @@ Below is a list of specs for the underlying base encodings:
 - `base16*` [RFC4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
 - `base32*` (Except for `base32z`) [rfc4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
 - `base32z` [Human-oriented base32 spec](https://philzimmermann.com/docs/human-oriented-base-32-encoding.txt)
+- `base45` [RFC9285](https://datatracker.ietf.org/doc/html/rfc9285.html)
 - `base64*` [RFC4648](https://datatracker.ietf.org/doc/html/rfc4648.html)
 - `base58btc` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02
 - `base58flickr` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02, but using a different alphabet
@@ -132,6 +134,7 @@ Consider the following encodings of the same binary string:
 4D756C74696261736520697320617765736F6D6521205C6F2F # base16 (hex)
 JV2WY5DJMJQXGZJANFZSAYLXMVZW63LFEEQFY3ZP           # base32
 3IY8QKL64VUGCX009XWUHKF6GBBTS3TVRXFRA5R            # base36
+TZ9:VDNEDHECDZC+ED944A4FVQEF$DK84%UB21             # base45
 YAjKoNbau5KiqmHPmSxYCvn66dA1vLmwbt                 # base58
 TXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==               # base64
 ```
@@ -142,11 +145,12 @@ And consider the same encodings with their multibase prefix
 F4D756C74696261736520697320617765736F6D6521205C6F2F # base16 F
 BJV2WY5DJMJQXGZJANFZSAYLXMVZW63LFEEQFY3ZP           # base32 B
 K3IY8QKL64VUGCX009XWUHKF6GBBTS3TVRXFRA5R            # base36 K
+RTZ9:VDNEDHECDZC+ED944A4FVQEF$DK84%UB21             # base45 R
 zYAjKoNbau5KiqmHPmSxYCvn66dA1vLmwbt                 # base58 z
 MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==               # base64 M
 ```
 
-The base prefixes used are: `F, B, K, z, M`.
+The base prefixes used are: `F, B, K, R, z, M`.
 
 
 ## FAQ
