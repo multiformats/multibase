@@ -194,6 +194,7 @@ The table even leaves some room for custom encodings and is intended to work bot
 - Kotlin
   - [kotlin-multibase](https://github.com/changjiashuai/kotlin-multibase)
   - `multibase` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
+- [zig-multibase](https://github.com/optimism-java/multiformats-zig)
 - [Add yours here!](https://github.com/multiformats/multibase/edit/master/README.md)
 
 
