@@ -104,7 +104,7 @@ Below is a list of specs for the underlying base encodings:
 - `base58btc` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02
 - `base58flickr` https://datatracker.ietf.org/doc/html/draft-msporny-base58-02, but using a different alphabet
 - `proquint` [Proquint RFC](rfcs/Proquint.md), which is the [original spec](https://arxiv.org/html/0901.4016) with an added prefix for legibility
-
+- `base256emoji` [Base256Emoji RFC](rfcs/Base256Emoji.md)
 
 
 ## Status
