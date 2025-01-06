@@ -180,7 +180,9 @@ The table even leaves some room for custom encodings and is intended to work bot
 - [js-multibase](https://github.com/multiformats/js-multibase)
 - [cs-multibase](https://github.com/tabrath/cs-multibase)
 - [rust-multibase](https://github.com/multiformats/rust-multibase)
-- [java-multibase](https://github.com/multiformats/java-multibase)
+- Java
+  - [java-multibase](https://github.com/multiformats/java-multibase)
+  - [copper-multibase](https://github.com/filip26/copper-multibase)
 - [py-multibase](https://github.com/multiformats/py-multibase)
 - [haskell-multibase](https://github.com/multiformats/haskell-multibase)
 - [net-ipfs-core](https://github.com/richardschneider/net-ipfs-core)
