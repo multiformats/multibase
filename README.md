@@ -197,8 +197,8 @@ The table even leaves some room for custom encodings and is intended to work bot
   - [kotlin-multibase](https://github.com/changjiashuai/kotlin-multibase)
   - `multibase` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
 - [zig-multibase](https://github.com/zen-eth/multiformats-zig)
+- `Multibase` part of the [MultiformatsKit](https://github.com/ATProtoKit/MultiformatsKit) Swift package
 - [Add yours here!](https://github.com/multiformats/multibase/edit/master/README.md)
-- `multibase` part of the [MultiformatsKit](https://github.com/ATProtoKit/MultiformatsKit) Swift package
 
 
 ## Disclaimers
