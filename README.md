@@ -178,7 +178,9 @@ The table even leaves some room for custom encodings and is intended to work bot
 
 - [go-multibase](https://github.com/multiformats/go-multibase)
 - [js-multibase](https://github.com/multiformats/js-multibase)
-- [cs-multibase](https://github.com/tabrath/cs-multibase)
+- C#
+  - [cs-multibase](https://github.com/tabrath/cs-multibase)
+  - [SimpleBase](https://github.com/ssg/SimpleBase)
 - [rust-multibase](https://github.com/multiformats/rust-multibase)
 - Java
   - [java-multibase](https://github.com/multiformats/java-multibase)
